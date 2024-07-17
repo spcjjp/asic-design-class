@@ -25,7 +25,8 @@ step1 : Compile using RISCV gcc compiler as shown below
 step2 : To See the assembly code of the C program, run the following command.
 
             riscv64-unknown-elf-objdump -d sum1ton.o
-            ![ss 3rd](https://github.com/user-attachments/assets/a611af91-3936-4e49-9870-a28f5be1cb4b)
+            
+![ss 3rd](https://github.com/user-attachments/assets/a611af91-3936-4e49-9870-a28f5be1cb4b)
 
             
             
