@@ -22,10 +22,10 @@ step1 : Compile using RISCV gcc compiler as shown below
 
             riscv64-unknown-elf-gcc -o1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c    
 
-           ![ss 2nd](https://github.com/user-attachments/assets/650e8dbb-7770-4aed-aadb-64f8c1f87843)
 step2 : To See the assembly code of the C program, run the following command.
 
             riscv64-unknown-elf-objdump -d sum1ton.o
+            
             
 
             
