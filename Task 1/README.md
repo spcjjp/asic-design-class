@@ -1,6 +1,6 @@
 Task: To watch C based and RISCV based lab videos and execute the task of compiling the C code using gcc and riscv compiler
 
-Compiling C code with gcc
+1. Compiling C code with gcc
 
 step1 : create a C file in the home directory
 
@@ -14,5 +14,11 @@ step2 : compile the C code using gcc command as shown below
            gcc sum1ton.c  # for compiling sum1ton.c
 
            ./a.out # to run the executable file created
+![Screenshot 2024-07-17 125706](https://github.com/user-attachments/assets/44984674-30c0-47a1-800b-8aa6f6fd283f)
 
+2. Compiling C code with RISCV gcc
+
+step1 : Compile using RISCV gcc compiler as shown below
+
+            riscv64-unknown-elf-gcc -o1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c    
             
