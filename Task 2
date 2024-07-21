@@ -1,0 +1,6 @@
+Task2: Get the same output from both gcc and RISCV gcc
+
+   Step 1:  Compile and get output
+            gcc sum1ton.code
+              ./a.out
+            
