@@ -33,28 +33,26 @@ run the following code
 
 Ater this if we are getting same output, then it is verified
 
-![1](https://github.com/user-attachments/assets/f41f06b6-0790-428d-88ea-7ce2b6ba6937)
+![Screenshot 2024-07-20 175448](https://github.com/user-attachments/assets/95fc87cb-95fb-44d0-923b-4a821c8c72b5)
+
     
-## step3: now debug the output 
-for that open the objdump of the output using the below command
-
-     riscv64-unknown-elf-objdump -d sum1ton.o | less
-
-![2](https://github.com/user-attachments/assets/e664d32a-a2ad-45a8-af38-5fab3fe6b2ab)
-
-now inorder to debug, we need to open a debuger, to do that we are going to use spike
+## step3: When we are to debug, we open debugger using spike
 
      spike -d pk sum1ton.o
 
-now if we want run the program counter to run till 100b0 and after this run the commands mannually, run the following command
-
+now if we want run our program counter to run till 100b0 
+   
      until pc 0 100b0
+ 
+ and after this run the commands mannually
 
-after running this command, you must see "bbl loader", this ensures assembly code has run till 100b0 address
+after this , you must see "bbl loader", this ensures assembly code has run till 100b0 address
 
 now see the objdump to see what is the next instruction, in my case 
 
 1. first command is lui a0, 0x21 which changes a0 register value
+
+    
 
 - so first check the value of reg a0 using the below command
      
