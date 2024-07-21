@@ -1,4 +1,4 @@
-# Task2: Get the same output from both gcc and RISCV gcc, and also debug the output got from riscv gcc.
+# Task2: Get the same output from both gcc and RISCV gcc
 
 
 
@@ -11,15 +11,14 @@
 
 
 
-## step1: compile the code using gcc and get output using ./a.out
-
-run the following code
+## step1: compile using gcc and output using ./a.out
  
      gcc sum1ton.code
 
     ./a.out
 
-   ![Screenshot 2024-07-20 175448](https://github.com/user-attachments/assets/313d553a-a619-451c-829c-19eb07c4c437)
+   ![Screenshot 2024-07-20 172340](https://github.com/user-attachments/assets/ced655e3-a8a5-409b-852c-334225f9c482)
+
 
 
     
