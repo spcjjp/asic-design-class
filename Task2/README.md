@@ -19,6 +19,9 @@ run the following code
 
     ./a.out
 
+   ![Screenshot 2024-07-20 175448](https://github.com/user-attachments/assets/313d553a-a619-451c-829c-19eb07c4c437)
+
+
     
 
 ## step2: compile the code using riscv gcc and get output using spike
