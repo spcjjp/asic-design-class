@@ -23,7 +23,7 @@
 
     
 
-## step2: compile the code using riscv gcc and get output using spike
+## step2: To check if we are getting same output with riscv compiler
 
 run the following code
 
@@ -31,7 +31,7 @@ run the following code
 
      spike pk sum1ton.o
 
-if we get the same output, it is verified that simulations are working as per expected
+Ater this if we are getting same output, then it is verified
 
 ![1](https://github.com/user-attachments/assets/f41f06b6-0790-428d-88ea-7ce2b6ba6937)
     
