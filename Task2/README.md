@@ -31,7 +31,7 @@ run the following code
 
      spike pk sum1ton.o
 
-Ater this if we are getting same output, then it is verified
+After this if we are getting same output, then it is verified
 
 ![Screenshot 2024-07-20 175448](https://github.com/user-attachments/assets/95fc87cb-95fb-44d0-923b-4a821c8c72b5)
 
@@ -52,54 +52,36 @@ now see the objdump to see what is the next instruction, in my case
 
 1. first command is lui a0, 0x21 which changes a0 register value
 
+
+![Screenshot 2024-07-20 180140](https://github.com/user-attachments/assets/c5a40beb-1995-44ff-a2b7-1b936fbab489)
     
 
 - so first check the value of reg a0 using the below command
      
+       :reg 0 a0
+
+-> Press Enter
+
+-> To find the contents of a2
+
       reg 0 a0
 
-- inorder to run the instruction press Enter
-
-- check the value of regiester again
-
-      reg 0 a0
-
-now we can observe the value of the a0 register has been modified
+ it get modified
 
 2. second command is addi sp,sp,-16 which changes sp value
 
-- so first check the value of stack pointer using the below command
+-> check the value of stack pointer using the below command
      
       reg 0 sp
 
-- inorder to run the instruction press Enter
+-> press Enter
 
-- check the value of sp regiester again
+-> check the value of sp regiester again
 
       reg 0 sp
 
-now we can observe the value of the sp register has been modified
-
-3. third command is li a2,55 which changes a2 register value
-
-- so first check the value of reg a2 using the below command
-     
-      reg 0 a2
-
-- inorder to run the next instruction press Enter
-
-- check the value of regiester again
-
-      reg 0 a2
-
-now we can observe the value of the a2 register has been modified
+now you can go further like this 
 
 ![3](https://github.com/user-attachments/assets/1f27a2a9-a906-4c03-8781-bcdeb4f3e827)
-
-you can see the calculation for the stack pointer from the below image
-
-- initial value of stack pointer: 3ffffffb50
-
-- subtracted by: 16 in decimal which is 10 in hexadecimal
 
 ![6](https://github.com/user-attachments/assets/6d7c732c-95be-4f3c-a26f-05e29e206a17)
