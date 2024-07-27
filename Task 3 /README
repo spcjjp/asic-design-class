@@ -20,6 +20,9 @@ Used for arithmetic and logical operations.
 
 2. I-type (Immediate)
 Used for immediate arithmetic, loads, and other operations that need a single immediate value.
+
+![Screenshot 2024-07-27 101128](https://github.com/user-attachments/assets/a16d738c-75de-4864-a32f-282f053727b2)
+
  
 •	opcode: Basic operation of the instruction.
 •	rd: Destination register.
