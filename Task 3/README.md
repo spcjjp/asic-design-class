@@ -1,5 +1,8 @@
 # Instructions Breakdown:
 
+ The instruction set givrn to me was as follows:
+
+
 ## ADD r5, r4, r5
 Type: R
 
