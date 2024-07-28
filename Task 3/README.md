@@ -302,34 +302,33 @@ Instruction: 0000000 00010 01011 001 01111 0110011
 
 ` Instruction 7 : ADDI r12, r3, 5 `
 
-[Screenshot from 2024-07-28 15-51-55](https://github.com/user-attachments/assets/1fcd7854-9b95-485f-82c3-d3acf62e7ade)
+![Screenshot from 2024-07-28 15-52-53](https://github.com/user-attachments/assets/a81bac39-5186-4ec7-a187-551fc6de4c1d)
+
 
 ` Instruction 8 : SW r3, r1, 4 `
 
+![Screenshot from 2024-07-28 18-49-41](https://github.com/user-attachments/assets/9a5f3d78-a79c-493c-aabf-7a66a344e54f)
 
+` Instruction 9 : SRL r16, r11, r2 `
 
+![Screenshot from 2024-07-28 15-55-08](https://github.com/user-attachments/assets/0c5795a3-8be7-49a0-a5ec-ca6065d74dfc)
 
+` Instruction 10 : BNE r0, r1, 20 `
 
+![Screenshot from 2024-07-28 15-53-12](https://github.com/user-attachments/assets/cadd4b15-bd22-4086-a15e-a356b4a042a6)
 
+` Instruction 11 : BEQ r0, r0, 15 `
 
+![Screenshot from 2024-07-28 15-52-53](https://github.com/user-attachments/assets/a81bac39-5186-4ec7-a187-551fc6de4c1d)
 
-
+` Instruction 12 : LW r13, r11, 2 `
 
 ![Screenshot from 2024-07-28 15-56-05](https://github.com/user-attachments/assets/4363cc79-da98-411e-8c33-cc44e5804e6a)
 
-![Screenshot from 2024-07-28 15-55-08](https://github.com/user-attachments/assets/0c5795a3-8be7-49a0-a5ec-ca6065d74dfc)
+` Instruction 13 : SLL r15, r11, r2 `
+
+
 ![Screenshot from 2024-07-28 15-54-53](https://github.com/user-attachments/assets/624b81e3-dcee-49bf-b680-8d0a4d474992)
-
-
-![Screenshot from 2024-07-28 15-54-01](https://github.com/user-attachments/assets/170ba9a3-d13a-40df-86d0-6ba12f62e57f)
-![Screenshot from 2024-07-28 15-53-12](https://github.com/user-attachments/assets/cadd4b15-bd22-4086-a15e-a356b4a042a6)
-![Screenshot from 2024-07-28 15-52-53](https://github.com/user-attachments/assets/a81bac39-5186-4ec7-a187-551fc6de4c1d)
-![Screenshot from 2024-07-28 15-52-26](https://github.com/user-attachments/assets/9f8bec7d-dbea-4f96-ad77-4d3121745d51)
-
-
-
-
-
 
 
 
