@@ -278,6 +278,75 @@ Instruction: 0000000 00010 01011 001 01111 0110011
 
 ` Instruction 1: ADD r5, r4, r5 `
 
+![Screenshot from 2024-07-28 15-51-55](https://github.com/user-attachments/assets/1fcd7854-9b95-485f-82c3-d3acf62e7ade)
+
+` Instruction 2 : SUB r5, r5, r4 `
+
+![Screenshot from 2024-07-28 15-55-21](https://github.com/user-attachments/assets/caee5b98-f8d2-429b-bba1-764299af69e3)
+
+` Instruction 3:  AND r4, r5, r5 `
+
+![Screenshot from 2024-07-28 15-52-26](https://github.com/user-attachments/assets/9f8bec7d-dbea-4f96-ad77-4d3121745d51)
+
+` Instruction 4 : OR r8, r4, r5 `
+
+![Screenshot from 2024-07-28 15-54-15](https://github.com/user-attachments/assets/f211cdb6-89f5-4d5f-b76f-1e09e06cc7c0)
+
+` Instruction 5 : XOR r8, r5, r4 `
+
+![Screenshot from 2024-07-28 15-55-47](https://github.com/user-attachments/assets/9b32428c-3bdd-46e3-ae4e-a67dfe21a8ab)
+
+` Instruction 6 : SLT r10, r2, r4 `
+
+![Screenshot from 2024-07-28 15-54-39](https://github.com/user-attachments/assets/cdec8860-c22c-44da-ad71-596b84860f17)
+
+` Instruction 7 : ADDI r12, r3, 5 `
+
+
+
+
+
+
+
+
+
+![Screenshot from 2024-07-28 15-56-05](https://github.com/user-attachments/assets/4363cc79-da98-411e-8c33-cc44e5804e6a)
+
+![Screenshot from 2024-07-28 15-55-08](https://github.com/user-attachments/assets/0c5795a3-8be7-49a0-a5ec-ca6065d74dfc)
+![Screenshot from 2024-07-28 15-54-53](https://github.com/user-attachments/assets/624b81e3-dcee-49bf-b680-8d0a4d474992)
+
+
+![Screenshot from 2024-07-28 15-54-01](https://github.com/user-attachments/assets/170ba9a3-d13a-40df-86d0-6ba12f62e57f)
+![Screenshot from 2024-07-28 15-53-12](https://github.com/user-attachments/assets/cadd4b15-bd22-4086-a15e-a356b4a042a6)
+![Screenshot from 2024-07-28 15-52-53](https://github.com/user-attachments/assets/a81bac39-5186-4ec7-a187-551fc6de4c1d)
+![Screenshot from 2024-07-28 15-52-26](https://github.com/user-attachments/assets/9f8bec7d-dbea-4f96-ad77-4d3121745d51)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    
 
 
