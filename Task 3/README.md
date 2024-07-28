@@ -267,6 +267,11 @@ Instruction: 0000000 00010 01011 001 01111 0110011
 
  6. The GTKWave will be opened and following window will be appeared:
 
+     ![Screenshot from 2024-07-28 15-19-11](https://github.com/user-attachments/assets/bd9aac73-b1ec-4a7f-99a2-ca534e1cde68)
+
+
+### As shown in the figure below, all the instructions in the given verilog file is hard-coded. Hard-coded means that instead of following the RISCV specifications bit pattern, the designer has hard-coded each instructions based on their own pattern.
+
     
 
 
