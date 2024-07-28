@@ -249,3 +249,24 @@ func7 = 0000000
 Instruction: 0000000 00010 01011 001 01111 0110011
 
 32-bit Code: 0x0025C293
+
+# Steps to perform functional simulation of RISCV
+
+1. Create a new directory with your name `mkdir <your_name>`
+2. Create two files by using `gedit` command as `asicver.v` and `asicver_tb.v` .
+3. Copy the code from the reference github repo and paste it in your verilog and testbench files
+4. To run and simulate the verilog code, enter the following command:
+
+
+   `$ iverilog -o asicver asicver32i.v asicver_tb.v`
+
+   ` $ ./asicver`
+ 5. To see the simulation waveform in GTKWave, enter the following command:  
+
+     `gtkwave asicver.vcd`
+
+ 6. The GTKWave will be opened and following window will be appeared:
+
+    
+
+
