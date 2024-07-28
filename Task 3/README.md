@@ -272,6 +272,13 @@ Instruction: 0000000 00010 01011 001 01111 0110011
 
 ### As shown in the figure below, all the instructions in the given verilog file is hard-coded. Hard-coded means that instead of following the RISCV specifications bit pattern, the designer has hard-coded each instructions based on their own pattern.
 
-    
+   ![Screenshot from 2024-07-28 15-17-56](https://github.com/user-attachments/assets/0b88fb6f-c0cb-4a3e-847c-76efeb4710c3)
+
+   ### Analysing the Output Waveform of various instructions that we have covered:
+
+` Instruction 1: ADD r5, r4, r5 `
+
+   
+
 
 
