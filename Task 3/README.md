@@ -302,6 +302,11 @@ Instruction: 0000000 00010 01011 001 01111 0110011
 
 ` Instruction 7 : ADDI r12, r3, 5 `
 
+[Screenshot from 2024-07-28 15-51-55](https://github.com/user-attachments/assets/1fcd7854-9b95-485f-82c3-d3acf62e7ade)
+
+` Instruction 8 : SW r3, r1, 4 `
+
+
 
 
 
