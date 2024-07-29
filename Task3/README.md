@@ -145,6 +145,25 @@ The instruction set given to me was as follows:
 - **32-bit Code:** 0x0025C293
 
 ---
+#### Following are the differences between standard RISCV ISA and the Instruction Set given in the reference repository:  
+
+| **Operation**      | **Standard RISCV ISA** | **Hardcoded ISA** |
+|:------------------:|:----------------------:|:-----------------:|
+| ADD R5, R4, R5     | 32'h005202b3           | 32'h02510280      |
+| SUB R5, R5, R4     | 32'h404282b3           | 32'h02429280      |
+| AND R4, R5, R5     | 32'h0052f233           | 32'h0250a300      |
+| OR R8, R4, R5      | 32'h005222b3           | 32'h02512480      |
+| XOR R8, R5, R4     | 32'h0042e2b3           | 32'h02412480      |
+| SLT R10, R2, R4    | 32'h004151b3           | 32'h02415580      |
+| ADDI R12, R3, 5    | 32'h005181b3           | 32'h00510600      |
+| SW R3, R1, 4       | 32'h0040a123           | 32'h00409181      |
+| SRL R16, R11, R2   | 32'h0022d803           | 32'h00271803      |
+| BNE R0, R1, 20     | 32'h00100063           | 32'h01400002      |
+| BEQ R0, R0, 15     | 32'h00000f63           | 32'h00f00002      |
+| LW R13, R11, 2     | 32'h0022a683           | 32'h00228681      |
+| SLL R15, R11, R2   | 32'h0022d7b3           | 32'h00228783      |
+
+The hardcoded ISA values are derived by following the pattern established in the provided reference repository.
 
 ## 🛠️ Steps to Perform Functional Simulation of RISCV
 
@@ -163,6 +182,7 @@ The instruction set given to me was as follows:
 6. The GTKWave will open, and the following window will appear:
 
    ![Screenshot from 2024-07-28 15-19-11](https://github.com/user-attachments/assets/bd9aac73-b1ec-4a7f-99a2-ca534e1cde68)
+
 
 ### ⚙️ All the instructions in the given Verilog file are hard-coded. Hard-coded means that instead of following the RISCV specifications bit pattern, the designer has hard-coded each instruction based on their own pattern.
 
