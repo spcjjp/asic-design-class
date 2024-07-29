@@ -180,8 +180,7 @@ The instruction set given to me was as follows:
 
 - **Instruction 3: AND r4, r5, r5**
 
-   ![Screenshot from 2024-07-28 15-52-26](https://github.com/user-attachments/assets/9f8bec7d-dbea-4f96-ad
-
+   ![and](https://github.com/user-attachments/assets/5ee015ad-7d19-4d17-9e28-761d44ac7f19)
 77-4d3121745d51)
 
 - **Instruction 4: OR r8, r4, r5**
