@@ -6,7 +6,8 @@ Step 1 : Open the text editor and write the program in 'C' that gives the 1's an
          the binary and conert it to decimal again.
 
          
-` #include <stdio.h>
+```
+ #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -24,7 +25,8 @@ void decimalToBinary(int decimal, char *binary) {
         }
     }
     binary[index] = '\0';
-    // Reverse the binary string
+
+  // Reverse the binary string
     for (int i = 0; i < index / 2; i++) {
         char temp = binary[i];
         binary[i] = binary[index - i - 1];
@@ -45,6 +47,7 @@ void onesComplement(const char *binary, char *complement) {
 void twosComplement(const char *onesComplement, char *twosComplement) {
     int length = strlen(onesComplement);
     int carry = 1;
+
   // Calculate 2's complement by adding 1 to 1's complement
     for (int i = length - 1; i >= 0; i--) {
         int sum = (onesComplement[i] - '0') + carry;
@@ -73,19 +76,68 @@ int main() {
     char twosComp[MAX_BITS + 1]; // 2's complement
     printf("Enter a decimal number: ");
     scanf("%d", &decimal);
-   // Convert decimal to binary
+
+  // Convert decimal to binary
     decimalToBinary(decimal, binary);
     printf("Binary representation: %s\n", binary);
+
   // Calculate 1's complement
-    onesComplement(binary, onesComp);
+  onesComplement(binary, onesComp);
     printf("1's complement in binary: %s\n", onesComp);
+
  // Calculate 2's complement
     twosComplement(onesComp, twosComp);
     printf("2's complement in binary: %s\n", twosComp);
-   // Convert 1's complement binary to decimal
+
+  // Convert 1's complement binary to decimal
     int onesCompDecimal = binaryToDecimal(onesComp);
     printf("1's complement in decimal: %d\n", onesCompDecimal);
-    // Convert 2's complement binary to decimal
+
+  // Convert 2's complement binary to decimal
     int twosCompDecimal = binaryToDecimal(twosComp);
     printf("2's complement in decimal: %d\n", twosCompDecimal);   return 0;
-} `
+}
+```
+Created  a folder named 
+   ```
+   complimnet.c
+```
+
+![1](https://github.com/user-attachments/assets/eb851b1f-3f7a-49fd-b5a2-86bfa743fe9b)
+
+## Step 2 : Compile it using GCC by giving the following series of command.
+```
+gcc compliment.c
+```
+press ` Enter `
+
+```
+./a.out
+```
+press `  Enter `
+
+Output after compiling my c code using gcc
+
+
+![2](https://github.com/user-attachments/assets/8fbde3b4-eed6-44fa-ae91-712afead5bfb)
+
+## Step 3 : Compile it using RISC-V GCC and verify the output using SPIKE by giving the following series of command.
+
+```
+riscv64-unknown-elf-gcc -O1 -o compliment compliment.c -lm
+
+```
+Press ` Enter `
+
+```
+spike pk compliment
+```
+Press `  Enter         `
+
+Output after compiling using risc v gcc
+
+![3](https://github.com/user-attachments/assets/c7540658-4cb7-40d8-a8a8-bfd8916ccf8f)
+
+### Result 
+ I am getting same output after compiling my c code through gcc and risc v gcc
+
