@@ -1,6 +1,10 @@
 <details>
 <summary> Digital logic with TL Verilog in Makerchip </summary>
 
+## TL Verilog
+
+TL-Verilog (Transaction-Level Verilog) is a modern hardware description language designed to simplify digital circuit design, especially for pipelines and parallelism. It offers a concise syntax, built-in handling of clocking and resets, and focuses on transaction-level modeling rather than low-level signal events. TL-Verilog integrates with traditional Verilog, making it easier to adopt and is popular for CPU design, particularly in RISC-V projects. It’s supported by tools like Makerchip for easy simulation and visualization.
+
 # Combinational Logic
 
 ## 1. Implemting an Inverter
