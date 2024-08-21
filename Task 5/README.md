@@ -322,7 +322,9 @@ Snapshot of Decode stage in makerchip:
 
 ## Lab for register file read
 
-Instrucion for Read
+The code of the REGISTER FILE READ operation is included below:
+
+
 
 ```c
          $rf_rd_en1 = !$rs1_valid;
@@ -333,7 +335,85 @@ Instrucion for Read
          $rf_rd_data2[31:0] = $src2_value[31:0];
 ```
 
-Snapshot for Read
+The snapshot of the REGISTER FILE READ operation is included below:
+
+![Screenshot 2024-08-21 144224](https://github.com/user-attachments/assets/ca74fe84-1574-4b87-9616-f47cd6366de1)
+
+## Lab for instruction file Write
+The code of the REGISTER FILE Write operation is included below:
+
+```c
+         $result[31:0] = $is_addi ? $src1_value + $imm :
+                         $is_add ? $src1_value + $src2_value :
+                         32'bx;
+         
+         $rf_wr_en = ($rd_valid || $rd !== 5'b0);  
+         $rf_wr_index[4:0] = $rd;
+         $rf_wr_data[31:0] = $result;
+```
+The snapshot of the REGISTER FILE write operation is included below:
+
+![Screenshot 2024-08-21 144224](https://github.com/user-attachments/assets/7484c7e1-b572-4a24-b4cf-97d3a19d0e80)
+
+## Lab for ALU (Arithmetic aand Logic Unit)
+### Block Diagram
+
+![Screenshot 2024-08-21 141047](https://github.com/user-attachments/assets/b6203d7c-fae4-477c-943d-555ce1de1542)
+
+
+### Code:
+
+```c
+//ARITHMETIC AND LOGIC UNIT (ALU)
+         $result[31:0] = $is_addi ? $src1_value + $imm :
+                         $is_add ? $src1_value + $src2_value :
+                         32'bx ;
+```
+
+### Snapshot from Makerchip
+
+![Screenshot 2024-08-21 150401](https://github.com/user-attachments/assets/345b9bb8-4b35-4ef5-a352-02a444b872bb)
+
+## Lab for implementing Branch Instructions
+
+### Block Diagram
+
+![Screenshot 2024-08-21 151014](https://github.com/user-attachments/assets/9bc62568-504d-4caf-879f-4f75615dbcf6)
+
+### Various Branch Instructions
+
+![Screenshot 2024-08-21 151030](https://github.com/user-attachments/assets/3f0136fd-a28a-4d6e-b9c2-a4a36f6362db)
+
+### Code  
+
+```c
+//BRANCH INSTRUCTIONS 1
+         $taken_branch = $is_beq ? ($src1_value == $src2_value):
+                         $is_bne ? ($src1_value != $src2_value):
+                         $is_blt ? (($src1_value < $src2_value) ^ ($src1_value[31] != $src2_value[31])):
+                         $is_bge ? (($src1_value >= $src2_value) ^ ($src1_value[31] != $src2_value[31])):
+                         $is_bltu ? ($src1_value < $src2_value):
+                         $is_bgeu ? ($src1_value >= $src2_value):
+                                    1'b0;
+```
+### Snapshot from Makerchip
+
+![Screenshot 2024-08-21 154720](https://github.com/user-attachments/assets/fc5888e4-f1f2-4c7d-b4cc-25d58c4f7429)
+
+### Viz
+
+![Screenshot 2024-08-21 154809](https://github.com/user-attachments/assets/dc9a379b-5bb2-4b7f-a3aa-4aefa53a78c5)
+
+
+
+
+
+
+
+
+         
+
+
 
 
 
