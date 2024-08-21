@@ -404,24 +404,25 @@ The snapshot of the REGISTER FILE write operation is included below:
 
 ![Screenshot 2024-08-21 154809](https://github.com/user-attachments/assets/dc9a379b-5bb2-4b7f-a3aa-4aefa53a78c5)
 
+## Lab to Create Simple Testbench:
 
+### Code
 
-
-
-
-
-
-         
-
-
-
-
-
-
-
+```c
+*passed = |cpu/xreg[10]>>5$value == (1+2+3+4+5+6+7+8+9+10) ;
+```
 
 
 </details>
+<details>
+
+<Summary>  Complete Pipelined RiscV CPU Micro-architecture </Summary>
+
+
+ 
+</details>
+
+
 
 
 
