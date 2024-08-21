@@ -418,8 +418,41 @@ The snapshot of the REGISTER FILE write operation is included below:
 
 <Summary>  Complete Pipelined RiscV CPU Micro-architecture </Summary>
 
+## Pipelining the CPU
+Now pipelining of the CPU core is done, which allows easy retiming and reduces functional bug to a great extent . Pipelining allows faster computaion. For pipelining as mentioned earlier we simply need to add @1, @2 and so on. The snapshot of the pipelining is as shown below. In TL verilog, another advantage is defining of pipeline in systematic order is not necessary.
 
- 
+## Lab on 3 Cycle Valid Signal
+
+### Code
+ ```c
+	
+$valid = $reset ? 1'b0 : ($start) ? 1'b1 : (>>3$valid) ;
+         $start_int = $reset ? 1'b0 : 1'b1;
+         $start = $reset ? 1'b0 : ($start_int && !>>1$start_int);
+```
+
+## Lab for generating valid signals for each instruction
+
+### Code
+```c
+  //Generate valid signals for each instruction fields
+         $rs1_or_funct3_valid    = $is_r_instr || $is_i_instr || $is_s_instr || $is_b_instr;
+         $rs2_valid              = $is_r_instr || $is_s_instr || $is_b_instr;
+         $rd_valid               = $is_r_instr || $is_i_instr || $is_u_instr || $is_j_instr;
+         $funct7_valid           = $is_r_instr;
+```
+
+
+# Completing the RISCV CPU
+
+### Block Diagram
+
+![Screenshot 2024-08-21 160550](https://github.com/user-attachments/assets/4c91e25b-79c3-43e7-bced-b3c11913e2e6)
+
+## Code
+```c
+
+
 </details>
 
 
