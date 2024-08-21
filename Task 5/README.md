@@ -1,5 +1,5 @@
 <details>
-## Digital logic with TL Verilog in Makerchip
+<summary>## Digital logic with TL Verilog in Makerchip </summary>
 
 # Combinational Logic
 
