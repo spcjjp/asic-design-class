@@ -1,5 +1,5 @@
 <details>
-<summary>## Digital logic with TL Verilog in Makerchip </summary>
+<summary> Digital logic with TL Verilog in Makerchip </summary>
 
 # Combinational Logic
 
@@ -217,10 +217,21 @@ Diagram
 
  </details>
 
+<details>
+<summary> Basic RISC-V CPU micro-architecture </summary>
+
+The block diagram of a basic RISC-V microarchitecture is as shown in figure below. Now, using the Makerchip platform the implementation of the RISC-V microarchitecture or core is done. For starting the implementation a starter code present in reference is used. The starter code consist of -
+
+-> A simple RISC-V assembler.
+->  An instruction memory containing the sum 1..10 test program.
+-> Commented code for register file and memory.
+->Visualization.
+
+![Screenshot 2024-08-21 132041](https://github.com/user-attachments/assets/95bf4998-058e-4915-8766-91d91937b475)
 
 
 
-
+</details>
 
 
 
