@@ -229,9 +229,35 @@ The block diagram of a basic RISC-V microarchitecture is as shown in figure belo
 
 ![Screenshot 2024-08-21 132041](https://github.com/user-attachments/assets/95bf4998-058e-4915-8766-91d91937b475)
 
+## Designing of processor is based on three core steps fetch, decode and execute :
+
+Here we gonna design RiscV Cpu Core for which block diagram is given below :
+
+![Screenshot 2024-08-21 141047](https://github.com/user-attachments/assets/465e1523-45a0-4aee-9ae7-bd31ea856229)
+
+## Fetch
+During the fetch stage, processors fetches the instruction from the memory to the address pointed by the program counter. The program counters holds the address of the next stage, in our case it is after 4 cycle and the instruction memory holds the set of instruction to be executed. The code of the fetch stage is shown below.
+
+```c
+|cpu
+      @0
+         $reset = *reset;
+         $clk_sat = *clk;
+         $pc[31:0] = >>1$reset ? 32'b0 : (>>1$pc + 32'd4);
+         
+      @1
+         $imem_rd_en = !$reset;
+         $imem_rd_addr[M4_IMEM_INDEX_CNT-1:0] = $pc[M4_IMEM_INDEX_CNT+1:2];
+         $instr[31:0] = $imem_rd_data[31:0]; 
+   ```
+
+Snapshot of Fetch stage in maker chip
+
+![Screenshot 2024-08-21 141551](https://github.com/user-attachments/assets/1f0a95da-935d-4be8-93b1-18e73a44ee3a)
 
 
 </details>
+
 
 
 
