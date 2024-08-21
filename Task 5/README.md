@@ -1,3 +1,4 @@
+<details>
 ## Digital logic with TL Verilog in Makerchip
 
 # Combinational Logic
@@ -214,7 +215,8 @@ Diagram
 
 
 
- 
+ </details>
+
 
 
 
