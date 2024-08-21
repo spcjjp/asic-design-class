@@ -748,6 +748,11 @@ $valid = $reset ? 1'b0 : ($start) ? 1'b1 : (>>3$valid) ;
 
 ![Screenshot 2024-08-21 163535](https://github.com/user-attachments/assets/b7d52a4b-c4d6-49ab-b4c2-4ceabd493d16)
 
+## The waveform for the /xreg[14] where the sum of this program is store:
+
+![Screenshot 2024-08-21 164916](https://github.com/user-attachments/assets/6d9e988e-0694-4a66-aa01-fc618211a8aa)
+
+
 
 
 
