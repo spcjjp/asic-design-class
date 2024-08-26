@@ -59,6 +59,27 @@ make pre_synth_sim
 
 ![Screenshot 2024-08-26 231722](https://github.com/user-attachments/assets/3de78f29-668e-454a-abd5-6c27ab2bcd50)
 
+###  Step 7: Compile and simulate the RISC-V design using the following command:
+
+```c
+$ iverilog -o output/pre_synth_sim.out -DPRE_SYNTH_SIM src/module/testbench.v -I src/include -I src/module
+
+```
+
+### Step 8: The simulation result (pre_synth_sim.vcd) will be saved in the output/pre_synth_sim directory. Now, switch to the output directory.
+
+```c
+cd output
+./pre_synth_sim.out
+```
+![Screenshot 2024-08-26 232423](https://github.com/user-attachments/assets/98805960-7cb6-4dbb-94cb-79ccf470e86e)
+
+## Makerchip Outaput Waveform
+
+![Screenshot 2024-08-22 053946](https://github.com/user-attachments/assets/9b51e4f4-3e64-49a2-93ea-e281aac922b6)
+
+
+
 
 
 
