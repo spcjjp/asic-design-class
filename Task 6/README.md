@@ -23,6 +23,18 @@ sudo chmod 666 /var/run/docker.sock
 
 ```
 
+### Step 2: Next, clone the provided repository into the home directory.
+
+```c
+cd ~
+git clone https://github.com/manili/VSDBabySoC.git
+
+```
+
+![Screenshot 2024-08-26 224705](https://github.com/user-attachments/assets/8e2fd0de-f89c-41b7-9e48-f4c493d2735a)
+
+
+
 
 
 
