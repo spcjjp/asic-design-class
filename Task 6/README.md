@@ -85,7 +85,7 @@ By following these steps, we will successfully convert a RISC-V .tlv file into V
 
 
 
-## Makerchip Outaput Waveform
+## Makerchip Output Waveform
 
 ![Screenshot 2024-08-22 053946](https://github.com/user-attachments/assets/9b51e4f4-3e64-49a2-93ea-e281aac922b6)
 
