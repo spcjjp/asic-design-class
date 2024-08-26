@@ -78,19 +78,14 @@ cd output
 
 ![Screenshot 2024-08-22 053946](https://github.com/user-attachments/assets/9b51e4f4-3e64-49a2-93ea-e281aac922b6)
 
+## GTKWave output waveform
+
+![Screenshot 2024-08-26 234418](https://github.com/user-attachments/assets/b89952a2-2ff0-412b-b284-54dcb28af6bf)
 
 
+## Conclusion
 
-
-
-
-
-
-
-
-
-
-
+Conclusion: The output showing the sum of integers from 1 to 9 is clearly visible as 02D in the waveforms of both Makerchip and GTKWave simulations.
 
 
 
