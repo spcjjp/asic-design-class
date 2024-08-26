@@ -72,6 +72,11 @@ $ iverilog -o output/pre_synth_sim.out -DPRE_SYNTH_SIM src/module/testbench.v -I
 cd output
 ./pre_synth_sim.out
 ```
+
+### Step 9: View Simulation Results with GTKWave Finally, open the simulation results (pre_synth_sim.vcd) using GTKWave:
+
+```c  gtkwave pre_synth_sim.vcd ```
+
 ![Screenshot 2024-08-26 232423](https://github.com/user-attachments/assets/98805960-7cb6-4dbb-94cb-79ccf470e86e)
 
 ## Makerchip Outaput Waveform
