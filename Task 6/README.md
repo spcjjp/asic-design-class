@@ -79,6 +79,12 @@ cd output
 
 ![Screenshot 2024-08-26 232423](https://github.com/user-attachments/assets/98805960-7cb6-4dbb-94cb-79ccf470e86e)
 
+
+
+By following these steps, we will successfully convert a RISC-V .tlv file into Verilog and simulate the design using Icarus Verilog and GTKWave.
+
+
+
 ## Makerchip Outaput Waveform
 
 ![Screenshot 2024-08-22 053946](https://github.com/user-attachments/assets/9b51e4f4-3e64-49a2-93ea-e281aac922b6)
