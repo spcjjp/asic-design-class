@@ -34,6 +34,7 @@ git clone https://github.com/manili/VSDBabySoC.git
 ![Screenshot 2024-08-26 224705](https://github.com/user-attachments/assets/8e2fd0de-f89c-41b7-9e48-f4c493d2735a)
 
 
+` satya `
 
 
 
