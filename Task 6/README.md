@@ -33,8 +33,31 @@ git clone https://github.com/manili/VSDBabySoC.git
 
 ![Screenshot 2024-08-26 224705](https://github.com/user-attachments/assets/8e2fd0de-f89c-41b7-9e48-f4c493d2735a)
 
+### Step 3: Replace the .tlv file in the VSDBabySoC/src/module directory with the RISC-V .tlv file that we intend to convert into Verilog.
 
-` satya `
+### Step 4: Navigate to the VSDBabySoC directory.
+
+```c
+
+cd VSDBabySoC
+```
+### Step 5: Convert the RISC-V .tlv file into a .v Verilog file by executing the following command:
+
+```c
+
+sandpiper-saas -i ./src/module/*.tlv -o rvmyth.v --bestsv --noline -p verilog --outdir ./src/module/
+```
+![Screenshot 2024-08-26 231620](https://github.com/user-attachments/assets/a94a4172-7e3e-43f1-b333-f5f4cd4a8c38)
+
+### Step 6: Generate the pre_synth_sim.vcd file by executing the following command:
+
+```c
+
+make pre_synth_sim
+
+```
+
+![Screenshot 2024-08-26 231722](https://github.com/user-attachments/assets/3de78f29-668e-454a-abd5-6c27ab2bcd50)
 
 
 
@@ -45,5 +68,9 @@ git clone https://github.com/manili/VSDBabySoC.git
 
 
 
-  
+
+
+
+
+
 </details>
