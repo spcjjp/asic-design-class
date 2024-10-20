@@ -96,6 +96,9 @@ Read the design files
 read_verilog good_mux.v        
 ```
 
+![Screenshot from 2024-10-20 16-35-19](https://github.com/user-attachments/assets/827c7f0b-59a0-4db8-8a51-8ae48b225adb)
+
+
 
 
 
