@@ -51,8 +51,15 @@ ls
 gtkwave tb_good_mux.vcd
 ```
 Below is the Snapshot of the above commands:
+![Screenshot from 2024-10-20 15-57-13](https://github.com/user-attachments/assets/9e159fa5-2cd5-4f09-b42c-bbab4786d23c)
 
-![Screenshot from 2024-10-20 15-30-09](https://github.com/user-attachments/assets/fcbfb1d8-73f3-4dc4-83a7-de81717ba795)
+TO view the Testbench and Verilog file, Use this Command:
+```c
+apt install vim-gtk3
+gvim tb_good_mux.v -o good_mux.v
+
+```
+![Screenshot from 2024-10-20 16-00-00](https://github.com/user-attachments/assets/a60b483f-0864-42d7-82e1-8d47de5b0b69)
 
 
 
