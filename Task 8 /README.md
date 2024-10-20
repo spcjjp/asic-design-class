@@ -75,7 +75,26 @@ Block Diagram of Yosys setup :
 
 Block Diagram of synthesis Verification:
 
+The primary inputs and outputs remain identical in both the RTL design and the synthesized netlist. As a result, the same test bench can be applied to both.
+
 ![Screenshot from 2024-10-20 16-29-08](https://github.com/user-attachments/assets/42ed2db4-13cf-474a-9139-adba871ff48f)
+
+Command steps for Yosys
+
+This will invoke/start the yosys
+
+```
+ yosys
+       
+```
+Load the sky130 standard library.
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib      
+```
+Read the design files
+```
+read_verilog good_mux.v        
+```
 
 
 
