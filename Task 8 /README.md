@@ -9,8 +9,8 @@
   
 **IVerilog based Simulation flow:**
 
+![image](https://github.com/user-attachments/assets/0e2f8052-f0f8-4cfa-bab0-fc83a490afb9)
 
-![Screenshot from 2024-10-20 15-15-25](https://github.com/user-attachments/assets/a7d6d8b4-291f-4164-8cac-cdd2b4272dc4)
 
  
 # LAB-1:
@@ -31,7 +31,8 @@ ls
 
 **Screenshot of the terminal window:**
 
-![image](https://github.com/user-attachments/assets/5ab593f9-447f-44eb-ac36-8b8a4d8a3b2b)
+![Screenshot from 2024-10-20 15-15-25](https://github.com/user-attachments/assets/a7d6d8b4-291f-4164-8cac-cdd2b4272dc4)
+
 
 # LAB-2:
 **Aim: Introduction to IVerilog gtkwave:**
