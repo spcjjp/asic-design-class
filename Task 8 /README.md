@@ -99,6 +99,23 @@ read_verilog good_mux.v
 ![Screenshot from 2024-10-20 16-35-19](https://github.com/user-attachments/assets/827c7f0b-59a0-4db8-8a51-8ae48b225adb)
 
 
+Synthesize the top level module
+
+```
+
+synth -top good_mux     
+
+```
+![Screenshot from 2024-10-20 16-39-43](https://github.com/user-attachments/assets/d742ce1d-08dc-4831-943c-29c584e16820)
+
+Map to the standard library
+
+```
+
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+![Screenshot from 2024-10-20 16-41-52](https://github.com/user-attachments/assets/b5e17c7b-f1a3-492e-a9b4-4a065d5721c0)
+
 
 
 
