@@ -10,6 +10,7 @@
 **IVerilog based Simulation flow:**
 
 ![image](https://github.com/user-attachments/assets/0e2f8052-f0f8-4cfa-bab0-fc83a490afb9)
+Simulator continuously checks for changes in the input. If there is any change in input, the output is evaluated else the simulator will never evaluate the output.
 
 
  
@@ -39,7 +40,19 @@ ls
 
 In this lab we will implement a 2:1 multiplexer.
 
-*Verilog code - good_mux.v:*
+The .v files of 2:1 multiplexer and its testbench is already present in the 'verilog_file' folder.
+
+We just need to put few commands as stated below in order to see the waveforms.
+
+```c
+iverilog good_mux.v tb_good_mux.v
+ls
+./a.out
+gtkwave tb_good_mux.vcd
+```
+Below is the Snapshot of the above commands:
+
+![Screenshot from 2024-10-20 15-30-09](https://github.com/user-attachments/assets/fcbfb1d8-73f3-4dc4-83a7-de81717ba795)
 
 
 
