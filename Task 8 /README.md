@@ -61,6 +61,25 @@ gvim tb_good_mux.v -o good_mux.v
 ```
 ![Screenshot from 2024-10-20 16-00-00](https://github.com/user-attachments/assets/a60b483f-0864-42d7-82e1-8d47de5b0b69)
 
+# LAB 3: AIM : Synthesis of 2:1 Multiplexer using Yosys and Logic Synthesis.
+
+Yosys
+
+Synthesizer is a tool for converting the RTL to Netlist and here we are using the Yosys as the Synthesizer.
+
+A synthesizer plays a key role in digital design by transforming RTL (Register Transfer Level) code into a gate-level netlist. This netlist provides a detailed description of the circuit, outlining the logical gates and their interconnections, and serves as the foundation for later stages like place and route. In this design flow, the synthesizer being used is Yosys, an open-source tool for Verilog HDL synthesis. Yosys applies several optimization techniques to generate an efficient gate-level implementation from the RTL code.
+
+Block Diagram of Yosys setup :
+
+![Screenshot from 2024-10-20 16-28-40](https://github.com/user-attachments/assets/bb3a11a3-6258-4717-8bc4-b97cbd975376)
+
+Block Diagram of synthesis Verification:
+
+![Screenshot from 2024-10-20 16-29-08](https://github.com/user-attachments/assets/42ed2db4-13cf-474a-9139-adba871ff48f)
+
+
+
+
 
 
 
