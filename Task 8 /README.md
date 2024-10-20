@@ -156,3 +156,37 @@ gvim sky130_fd_sc_hd__tt_025C_1v80.lib
 
 Press Shift + : syn off
 
+Standard Cell Library Information
+
+Technology Specifications
+
+
+
+Process: 130nm CMOS technology
+Delay model: Table lookup
+
+
+Units and Naming Conventions
+
+
+
+->Time: 1 ns
+->Voltage: 1 V
+->Leakage Power: 1 nW
+->Current: 1 mA
+->Pulling Resistance: 1 kΩ
+->Capacitive Load: 1.0 pF
+>Bus naming style: "%s[%d]"
+
+
+Cell Characteristics
+
+
+For each cell in the library, the following information is typically provided:
+
+->Leakage power
+->Power consumption
+->Area
+->Input capacitance
+->Delay for different input combinations
+
