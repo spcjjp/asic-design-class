@@ -129,6 +129,13 @@ In order to see graphical version of the logic it has realized just type :
 
 show
 ```
+## To save the netlist, use the write_verilog command. This will generate the netlist file in the current directory:
+```c
+write_verilog -noattr good_mux_netlist.v
+!gvim good_mux_netlist.v
+
+```
+![asic](https://github.com/user-attachments/assets/95d68184-b83f-44a4-8332-b1040fdc4773)
 
 
 
