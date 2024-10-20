@@ -170,13 +170,13 @@ Units and Naming Conventions
 
 
 
-*->Time: 1 ns
-*->Voltage: 1 V
-*->Leakage Power: 1 nW
-*->Current: 1 mA
-*->Pulling Resistance: 1 kΩ
-*->Capacitive Load: 1.0 pF
-*->Bus naming style: "%s[%d]"
+* ->Time: 1 ns
+* ->Voltage: 1 V
+* ->Leakage Power: 1 nW
+* ->Current: 1 mA
+* ->Pulling Resistance: 1 kΩ
+* ->Capacitive Load: 1.0 pF
+* ->Bus naming style: "%s[%d]"
 
 
 Cell Characteristics
@@ -184,9 +184,9 @@ Cell Characteristics
 
 For each cell in the library, the following information is typically provided:
 
-*->Leakage power
-*->Power consumption
-*->Area
-*->Input capacitance
-*->Delay for different input combinations
+* ->Leakage power
+* ->Power consumption
+* ->Area
+* ->Input capacitance
+* ->Delay for different input combinations
 
