@@ -145,3 +145,7 @@ write_verilog -noattr good_mux_netlist.v
   
 </details>
 
+
+<details>
+<summary>Day-2</summary>
+<br>
