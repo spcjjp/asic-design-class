@@ -137,15 +137,22 @@ write_verilog -noattr good_mux_netlist.v
 ```
 ![asic](https://github.com/user-attachments/assets/95d68184-b83f-44a4-8332-b1040fdc4773)
 
-
-
-
-
-
-  
 </details>
 
 
 <details>
 <summary>Day-2</summary>
 <br>
+
+## LAB 4 - AIM : Introduction and Walkthrough to ' dot lib '.
+
+'.lib' is like a collection of standard cells. It contains slow cells, fast cells and many more things. In order to view the '.lib' files, Enter the following command :
+```c
+sudo -i
+cd /home/chandra-shekhar-jha/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib
+gvim sky130_fd_sc_hd__tt_025C_1v80.lib
+
+```
+
+Press Shift + : syn off
+
