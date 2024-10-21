@@ -129,6 +129,9 @@ In order to see graphical version of the logic it has realized just type :
 
 show
 ```
+![Screenshot from 2024-10-21 01-42-25](https://github.com/user-attachments/assets/7b6ac318-94a2-4a23-9ab3-a7f3d7d39727)
+
+
 ## To save the netlist, use the write_verilog command. This will generate the netlist file in the current directory:
 ```c
 write_verilog -noattr good_mux_netlist.v
@@ -153,8 +156,9 @@ cd /home/chandra-shekhar-jha/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib
 gvim sky130_fd_sc_hd__tt_025C_1v80.lib
 
 ```
-
 Press Shift + : syn off
+![image](https://github.com/user-attachments/assets/2ab0f842-bdc0-4cee-b86e-ff62b0243807)
+
 
 Standard Cell Library Information
 
@@ -189,4 +193,79 @@ For each cell in the library, the following information is typically provided:
 * ->Area
 * ->Input capacitance
 * ->Delay for different input combinations
+
+  Considering a two input AND gate:
+  ![image](https://github.com/user-attachments/assets/92c784cf-ace9-4751-813a-d3a7776dcdd3)
+
+  ## LAB : 5  Hierarchical vs flat synthesis & Various Flop Coding Styles and optimization:
+  # Hierarchical Synthesis:
+```c
+cd~
+cd /home/nikhil-bhusari/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog multiple_modules.v
+
+```
+![image](https://github.com/user-attachments/assets/1fa6db1a-f16f-4023-a674-884215a291d4)
+
+### To Synthesize the Design:
+```c 
+synth -top multiple_modules
+```
+When we run this Command we get the following:
+
+![image](https://github.com/user-attachments/assets/341bca6f-5e83-4310-9fdc-8779b6202c4a)
+
+### Multiple Modules: - 2 SubModules
+
+Commands to generate the netlist & Create a Graphical Representation of Logic for Multiple Modules:
+```c 
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show multiple_modules
+```
+![image](https://github.com/user-attachments/assets/acb3060f-6436-429e-a574-ee62a24a895e)
+
+* Writing the netlist and then viewing *
+```c 
+write_verilog -noattr multiple_modules_hier.v
+!vim multiple_modules_hier.v
+```
+NETLIST file
+
+![image](https://github.com/user-attachments/assets/0dfa5872-f7ae-4a44-809d-527a3ee156e0)
+
+* Use of Flattening: Merges all hierarchical modules in the design into a single module to create a flat netlist. for this just type
+```c
+flatten
+
+```
+Writing the netlist and then viewing
+```c
+
+write_verilog -noattr multiple_modules_hier.v
+!vim multiple_modules_hier.v
+```
+![image](https://github.com/user-attachments/assets/c71d8145-c139-4f1f-8e9b-de073b1ab206)
+
+
+NETLIST file
+![Screenshot from 2024-10-21 13-30-36](https://github.com/user-attachments/assets/c64ad262-4cc3-4178-b8c9-9a439843af7c)
+
+Now let's Create a Graphical Representation of Logic for Multiple Modules:
+
+```c
+show
+```
+![Screenshot from 2024-10-21 13-36-52](https://github.com/user-attachments/assets/bc888834-3135-41e4-b6d0-dfb0a052426c)
+
+## Design and Simulation of D Flip-Flops Using Icarus Verilog, GTKWave, and Yosys
+
+This project showcases different coding approaches for D Flip-Flops and includes simulations using Icarus Verilog and GTKWave. Additionally, it explores the synthesis of these designs using Yosys. The simulations cover three varieties of D Flip-Flops:
+
+    * D Flip-Flop with Asynchronous Reset
+    * D Flip-Flop with Asynchronous Set
+    * D Flip-Flop with Synchronous Reset
+
+
 
