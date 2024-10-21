@@ -1352,7 +1352,7 @@ read_verilog counter_opt2.v
 ```
 Synthesize the Design
 ```
-synth -top counter_opt2
+synth -top counter_opt
 ```
 Now Generate the Netlist
 ```
@@ -1362,6 +1362,8 @@ Now let's Create a Graphical Representation
 ```
 show
 ```
+![image](https://github.com/user-attachments/assets/373960d2-7fd7-4c3f-8980-481f376f5dd2)
+
 </details>
 
 <details>
