@@ -942,7 +942,7 @@ OBSERVATION : Since reset doesn't depend on clock edge, therefore the D Flip Flo
 
 The velilog code for the asynchronous reset (active high) is given below :
 ```
-module dff_const1(input clk, input reset, output reg q); 
+module dff_const2(input clk, input reset, output reg q); 
 always @(posedge clk, posedge reset)
 begin
 	if(reset)
@@ -1081,6 +1081,11 @@ module dff_const3(input clk, input reset, output reg q);
 	end
 endmodule
 ```
+The below is the waveform:
+
+![image](https://github.com/user-attachments/assets/a41592d2-0565-4118-afcb-0eab2b935fec)
+
+
 ### SYNTHESIS :
 Command steps :
 
@@ -1145,6 +1150,11 @@ module dff_const4(input clk, input reset, output reg q);
 	end
 endmodule
 ```
+Below is the Waveform:
+
+![image](https://github.com/user-attachments/assets/12b03924-54d1-4886-a6d1-0a313275bf1e)
+
+
 ### SYNTHESIS :
 
 Command steps :
@@ -1210,6 +1220,11 @@ module dff_const5(input clk, input reset, output reg q);
 	end
 endmodule
 ```
+Below is the GTKWave Waveform:
+
+![image](https://github.com/user-attachments/assets/fadb8e56-f3c3-440e-b59e-b201a410432c)
+
+
 ### SYNTHESIS :
 Command steps :
 
@@ -1271,6 +1286,11 @@ module counter_opt (input clk, input reset, output q);
 	end
 endmodule
 ```
+GTKwaveform
+
+![image](https://github.com/user-attachments/assets/6e86fe37-1dd3-4069-9ff6-b34669295c6d)
+
+
 ## SYNTHESIS :
 Command steps :
 
