@@ -449,4 +449,38 @@ Now let's execute the ' a.out ' file and observe the waveforms.
 gtkwave tb_dff_syncres.vcd
 ```
 Below is the Snapshot of the above commands and the resultant Waveforms:
+![image](https://github.com/user-attachments/assets/5707043e-d8d1-43ff-90d1-53a74f079b73)
 
+## Synthesis of Various D-Flipflop using Yosys
+I am performing this using 3 types of D Flip Flops:
+* 1. Asynchronous Reset
+* 2.   Asynchronous Set
+ * 3.   Synchronous Reset.
+
+## 1. Asynchronous Reset
+
+Follow the steps to get Graphical Representation of Asynchronous Reset - D FlipFlop
+```c
+cd ~
+cd /home/chandra-shekhar-jha/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+
+yosys       
+
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+
+read_verilog dff_asyncres.v
+
+
+synth -top dff_asyncres
+
+
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+
+show
+
+
+```
