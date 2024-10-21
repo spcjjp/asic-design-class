@@ -152,7 +152,7 @@ write_verilog -noattr good_mux_netlist.v
 '.lib' is like a collection of standard cells. It contains slow cells, fast cells and many more things. In order to view the '.lib' files, Enter the following command :
 ```c
 sudo -i
-cd /home/chandra-shekhar-jha/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib
+cd /home/satya/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib
 gvim sky130_fd_sc_hd__tt_025C_1v80.lib
 
 ```
@@ -201,7 +201,7 @@ For each cell in the library, the following information is typically provided:
   # Hierarchical Synthesis:
 ```c
 cd~
-cd /home/nikhil-bhusari/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+cd /home/satya/vlsi/sky130RTLDesignAndSynthesisWorkshop/verilog_files
 yosys
 read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 read_verilog multiple_modules.v
@@ -307,7 +307,7 @@ endmodule
 
     Navigate to the directory where the Verilog files are located:
 ```
-    cd /home/username/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+    cd /home/satya/vlsi/sky130RTLDesignAndSynthesisWorkshop/verilog_files
 ```
    Run the following commands to compile and simulate the design:
 ```
@@ -371,7 +371,7 @@ Go to the required directory
 ```c
 sudo -i
 cd ~
-cd /home/chandra-shekhar-jha/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+cd /home/satya/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files
 ```
 We just need to put few commands as stated below in order to see the waveforms.
 ```c
@@ -434,7 +434,7 @@ Go to the required directory
 ```
 sudo -i
 cd ~
-cd /home/chandra-shekhar-jha/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+cd /home/satya/vlsi/sky130RTLDesignAndSynthesisWorkshop/verilog_files
 ```
 We just need to put few commands as stated below in order to see the waveforms.
 ```
@@ -462,25 +462,44 @@ I am performing this using 3 types of D Flip Flops:
 Follow the steps to get Graphical Representation of Asynchronous Reset - D FlipFlop
 ```c
 cd ~
-cd /home/chandra-shekhar-jha/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files
-
-
+cd /home/vlsi/sky130RTLDesignAndSynthesisWorkshop/verilog_files
 yosys       
-
-
 read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-
-
 read_verilog dff_asyncres.v
-
-
 synth -top dff_asyncres
-
-
 dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-
-
 show
 
 
 ```
+![image](https://github.com/user-attachments/assets/efc7bc84-b7cd-46c7-940a-258969ca3736)
+
+## 2. Asynchronous Set
+Command steps to Create a Graphical Representation of Asynchronous Set - D FlipFlop
+```c
+cd ~
+cd /home/chandra-shekhar-jha/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+yosys       
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_async_set.v
+synth -top dff_async_set
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+![image](https://github.com/user-attachments/assets/acacc62d-8b41-45d1-bb76-b710e7c73fa3)
+
+
+## 3. Synchronous Reset
+Command steps to Create a Graphical Representation of Synchronous Reset - D FlipFlop :
+```c
+cd ~
+cd /home/chandra-shekhar-jha/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+yosys       
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_syncres.v
+synth -top dff_syncres
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+![image](https://github.com/user-attachments/assets/ba7c91a1-e1f0-42a3-852f-a9d8c05786b1)
+
