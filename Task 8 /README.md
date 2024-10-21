@@ -830,4 +830,537 @@ show
 ```
 ![image](https://github.com/user-attachments/assets/1af0f686-38fc-4823-a2cb-2369aab3a148)
 
+# LAB 6 - AIM : Optimization of various Sequential Designs
+## Optimization of various Sequential Designs
+
+1. D-Flipflop Constant 1 with Asynchronous Reset (active low)
+2.  D-Flipflop Constant 2 with Asynchronous Reset (active high)
+3. D-Flipflop Constant 3 with Synchronous Reset (active low)
+ 4. D-Flipflop Constant 4 with Synchronous Reset (active high)
+5. D-Flipflop Constant 5 with Synchronous Reset
+ 6. Counter Optimization 1
+ 7.   Counter Optimization 2
+
+## 1. D-Flipflop Constant 1 with Asynchronous Reset (active low)
+
+The velilog code for the asynchronous reset (active low) is given below :
+```c
+module dff_const1(input clk, input reset, output reg q); 
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+		q <= 1'b0;
+	else
+		q <= 1'b1;
+end
+endmodule
+```
+Testbench code is as follows:
+```
+module tb_dff_const1; 
+	reg clk, reset;
+	wire q;
+
+	dff_const1 uut (.clk(clk),.reset(reset),.q(q));
+
+	initial begin
+		$dumpfile("tb_dff_const1.vcd");
+		$dumpvars(0,tb_dff_const1);
+		// Initialize Inputs
+		clk = 0;
+		reset = 1;
+		#3000 $finish;
+	end
+
+	always #10 clk = ~clk;
+	always #1547 reset=~reset;
+endmodule
+```
+Command steps :
+
+Go to the required directory
+```
+sudo -i
+cd ~
+cd /home/vlsi/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+We just need to put few commands as stated below in order to see the waveforms.
+```
+iverilog dff_const1.v tb_dff_const1.v
+ls
+```
+After giving the above command the IVerilog stores the output as ' a.out '
+
+Now let's execute the ' a.out ' file and observe the waveforms.
+```
+./a.out
+gtkwave tb_dff_const1.vcd
+```
+Below is the Snapshot of the above commands and the resultant Waveforms:
+
+![image](https://github.com/user-attachments/assets/392e515c-746f-4e06-9575-4dccbcfbab69)
+
+OBSERVATION : From the waveform, it can be observed that the Q output is always high when reset is zero, and reset doesn't depend on clock edge.
+
+SYNTHESIS :
+Go to the required directory
+```
+cd ~
+sudo -i
+cd ~
+cd /home/vlsi/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+This will invoke/start the yosys
+```
+yosys       
+```
+Read the library
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+Read the design verilog files
+```
+read_verilog dff_const1.v
+```
+Synthesize the Design
+```
+synth -top dff_const1
+```
+Now Generate the Netlist
+```
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+Now let's Create a Graphical Representation
+```
+show
+```
+![image](https://github.com/user-attachments/assets/d0cf5fc4-63bc-4201-b75a-8054456ad8a5)
+
+OBSERVATION : Since reset doesn't depend on clock edge, therefore the D Flip Flop has not been removed.
+
+## 2. D-Flipflop Constant 2 with Asynchronous Reset (active high)
+
+The velilog code for the asynchronous reset (active high) is given below :
+```
+module dff_const1(input clk, input reset, output reg q); 
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+		q <= 1'b1;
+	else
+		q <= 1'b1;
+end
+endmodule
+```
+Testbench code is as follows:
+```
+module tb_dff_const2; 
+	reg clk, reset;
+	wire q;
+
+	dff_const2 uut (.clk(clk),.reset(reset),.q(q));
+
+	initial begin
+		$dumpfile("tb_dff_const1.vcd");
+		$dumpvars(0,tb_dff_const1);
+		// Initialize Inputs
+		clk = 0;
+		reset = 1;
+		#3000 $finish;
+	end
+
+	always #10 clk = ~clk;
+	always #1547 reset=~reset;
+endmodule
+```
+Command steps :
+
+Go to the required directory
+```
+sudo -i
+cd ~
+cd /home/vlsi/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+We just need to put few commands as stated below in order to see the waveforms.
+```
+iverilog dff_const2.v tb_dff_const2.v
+ls
+```
+After giving the above command the IVerilog stores the output as ' a.out '
+
+Now let's execute the ' a.out ' file and observe the waveforms.
+```
+./a.out
+gtkwave tb_dff_const2.vcd
+```
+Below is the Snapshot of the above commands and the resultant Waveforms:
+![image](https://github.com/user-attachments/assets/b403ef14-96c5-4536-b1b0-8261ff0c1d69)
+
+OBSERVATION : From the waveform, it can be observed that the Q output is always high irrespective of reset.
+
+### SYNTHESIS :
+
+Go to the required directory
+```c
+cd ~
+sudo -i
+cd ~
+cd /home/vlsi/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+This will invoke/start the yosys
+```
+yosys       
+```
+Read the library
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+Read the design verilog files
+```
+read_verilog dff_const2.v
+```
+Synthesize the Design
+```
+synth -top dff_const2
+```
+![image](https://github.com/user-attachments/assets/47e5fb31-8bb3-4c50-94da-701fa1970586)
+
+
+### OBSERVATION : Now D Flip Flop has been synthesised.
+
+Now Generate the Netlist
+```
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+Now let's Create a Graphical Representation
+```
+show
+```
+![image](https://github.com/user-attachments/assets/940bc44c-6573-42b4-ae90-fb7fc5802a4b)
+OBSERVATION : Since output q doesn't depend on reset edgeand is always 1, therefore the D Flip Flop has been removed.
+
+## 3. D-Flipflop Constant 3 with Synchronous Reset (active low)
+
+The velilog code for the synchronous reset (active low) is given below :
+```
+module dff_const3(input clk, input reset, output reg q); 
+	reg q1;
+
+	always @(posedge clk, posedge reset)
+	begin
+		if(reset)
+		begin
+			q <= 1'b1;
+			q1 <= 1'b0;
+		end
+		else
+		begin	
+			q1 <= 1'b1;
+			q <= q1;
+		end
+	end
+endmodule
+```
+Testbench code is as follows:
+```
+module dff_const3(input clk, input reset, output reg q); 
+	reg q1;
+
+	always @(posedge clk, posedge reset)
+	begin
+		if(reset)
+		begin
+			q <= 1'b1;
+			q1 <= 1'b0;
+		end
+		else
+		begin	
+			q1 <= 1'b1;
+			q <= q1;
+		end
+	end
+endmodule
+```
+### SYNTHESIS :
+Command steps :
+
+Go to the required directory
+```
+cd ~
+sudo -i
+cd ~
+cd /home/vlsi/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+This will invoke/start the yosys
+
+yosys       
+
+Read the library
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+Read the design verilog files
+```
+read_verilog dff_const3.v
+```
+Synthesize the Design
+```
+synth -top dff_const3
+```
+
+![image](https://github.com/user-attachments/assets/d47b12f7-fb16-40ee-8e65-623d327fc8ba)
+
+Now Generate the Netlist
+```
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+Now let's Create a Graphical Representation
+```
+show
+```
+![image](https://github.com/user-attachments/assets/76291f62-aefa-405c-bf8e-6aa9a4ceaad7)
+OBSERVATION : This module defines a D flip-flop, for a positive edge of reset, q is set to 1 and q1 is set to 0. On each clock cycle, q1 is set to 1, and q is updated with the value of q1.
+
+When synthesized, the design will result in a flip-flop where q becomes 1 after the first clock cycle post-reset and stays 1 afterward.
+
+## 4. D-Flipflop Constant 4 with Synchronous Reset (active high)
+
+The velilog code for the synchronous reset (active high) is given below :
+```
+module dff_const4(input clk, input reset, output reg q); 
+	reg q1;
+
+	always @(posedge clk, posedge reset)
+	begin
+		if(reset)
+		begin
+			q <= 1'b1;
+			q1 <= 1'b1;
+		end
+		else
+		begin	
+			q1 <= 1'b1;
+			q <= q1;
+		end
+	end
+endmodule
+```
+### SYNTHESIS :
+
+Command steps :
+
+Go to the required directory
+```
+cd ~
+sudo -i
+cd ~
+cd /home/vlsi/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+This will invoke/start the yosys
+```
+yosys       
+```
+Read the library
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+Read the design verilog files
+```
+read_verilog dff_const4.v
+```
+Synthesize the Design
+```
+synth -top dff_const4
+```
+![image](https://github.com/user-attachments/assets/d49ac6e9-a2d7-4c14-bda3-77b4e42db309)
+
+
+Now Generate the Netlist
+```
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+Now let's Create a Graphical Representation
+```
+show
+```
+![image](https://github.com/user-attachments/assets/10d2184e-cb8b-4671-aaf1-2b07ed0ebc7f)
+OBSERVATION : This module defines a D flip-flop that sets both q and q1 to 1 on a positive edge of reset. On each clock cycle, q1 remains 1, and q is updated with the value of q1 (which is always 1).
+
+When synthesized, the design will result in a flip-flop where q is always 1, regardless of the reset or clock state.
+
+## 5. D-Flipflop Constant 5 with Synchronous Reset
+
+The velilog code for the synchronous reset is given below :
+```
+module dff_const5(input clk, input reset, output reg q); 
+	reg q1;
+
+	always @(posedge clk, posedge reset)
+	begin
+		if(reset)
+		begin
+			q <= 1'b0;
+			q1 <= 1'b0;
+		end
+		else
+		begin	
+			q1 <= 1'b1;
+			q <= q1;
+		end
+	end
+endmodule
+```
+### SYNTHESIS :
+Command steps :
+
+Go to the required directory
+```
+cd ~
+sudo -i
+cd ~
+cd /home/vlsi/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+This will invoke/start the yosys
+```
+yosys       
+```
+Read the library
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+Read the design verilog files
+```
+read_verilog dff_const5.v
+```
+Synthesize the Design
+```
+synth -top dff_const5
+
+```
+![image](https://github.com/user-attachments/assets/37d5de10-11fa-4d8a-b487-3251fee86e08)
+
+Now Generate the Netlist
+```
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+Now let's Create a Graphical Representation
+```
+show
+```
+![image](https://github.com/user-attachments/assets/70b9aca6-35a1-41bc-a13b-acf76e24e4d8)
+
+OBSERVATION : This module defines a D flip-flop that resets both q and q1 to 0 on a positive edge of reset. On each clock cycle, it sets q1 to 1 and then updates q with the value of q1 (which will always be 1 after the first cycle).
+
+When synthesized, the design will result in a flip-flop where q is always 1 after the first clock cycle post-reset.
+
+
+## 6. Counter Optimization 1
+
+The verilog code for the Counter Optimization 1 is given below :
+```c
+module counter_opt (input clk, input reset, output q);
+	reg [2:0] count;
+	assign q = count[0];
+	
+	always @(posedge clk,posedge reset)
+	begin
+		if(reset)
+			count <= 3'b000;
+		else
+			count <= count + 1;
+	end
+endmodule
+```
+## SYNTHESIS :
+Command steps :
+
+Go to the required directory
+```
+cd ~
+sudo -i
+cd ~
+cd /home/vlsi/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+This will invoke/start the yosys
+```
+yosys       
+```
+Read the library
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+Read the design verilog files
+```
+read_verilog counter_opt.v
+```
+Synthesize the Design
+```
+synth -top counter_opt
+```
+![image](https://github.com/user-attachments/assets/54dfcaab-f544-4295-b8b8-a075d1f92f6c)
+
+
+Now Generate the Netlist
+```
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+Now let's Create a Graphical Representation
+```
+show
+```
+![image](https://github.com/user-attachments/assets/0bd80314-a5fe-4569-b6df-311cd63f87ba)
+
+## 7. Counter Optimization 2
+
+The velilog code for the synchronous reset (active high) is given below :
+```
+module counter_opt2 (input clk, input reset, output q);
+	reg [2:0] count;
+	assign q = (count[2:0] == 3'b100);
+	
+	always @(posedge clk,posedge reset)
+	begin
+		if(reset)
+			count <= 3'b000;
+		else
+			count <= count + 1;
+	end
+endmodule
+```
+## SYNTHESIS :
+
+Command steps :
+
+Go to the required directory
+```
+cd ~
+sudo -i
+cd ~
+cd /home/vlsi/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+This will invoke/start the yosys
+```
+yosys       
+```
+Read the library
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+Read the design verilog files
+```
+read_verilog counter_opt2.v
+```
+Synthesize the Design
+```
+synth -top counter_opt2
+```
+Now Generate the Netlist
+```
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+Now let's Create a Graphical Representation
+```
+show
+```
+
 </details>
