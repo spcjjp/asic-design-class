@@ -267,5 +267,186 @@ This project showcases different coding approaches for D Flip-Flops and includes
     * D Flip-Flop with Asynchronous Set
     * D Flip-Flop with Synchronous Reset
 
+## 1. D Flip-Flop with Asynchronous Reset:
 
+Verilog code for the D Flip-Flop with an asynchronous reset:
+```c 
+module dff_asyncres(input clk, input async_reset, input d, output reg q);
+	always@(posedge clk, posedge async_reset)
+	begin
+		if(async_reset)
+			q <= 1'b0;
+		else
+			q <= d;
+	end
+endmodule
+```
+Testbench for Asynchronous Reset D Flip-Flop:
+```
+module tb_dff_asyncres; 
+	reg clk, async_reset, d;
+	wire q;
+	dff_asyncres uut (.clk(clk), .async_reset(async_reset), .d(d), .q(q));
+
+	initial begin
+		$dumpfile("tb_dff_asyncres.vcd");
+		$dumpvars(0, tb_dff_asyncres);
+		clk = 0;
+		async_reset = 1;
+		d = 0;
+		#3000 $finish;
+	end
+	
+	always #10 clk = ~clk;
+	always #23 d = ~d;
+	always #547 async_reset = ~async_reset; 
+endmodule
+
+```
+* Steps to Run the Simulation:
+
+    Navigate to the directory where the Verilog files are located:
+```
+    cd /home/username/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+   Run the following commands to compile and simulate the design:
+```
+iverilog dff_asyncres.v tb_dff_asyncres.v
+ls
+```
+The compiled output will be saved as a.out.
+
+ Execute the compiled output and open the waveform viewer:
+```
+./a.out
+gtkwave tb_dff_asyncres.vcd
+```
+By following these steps,we can observe the behavior of the D Flip-Flop with an asynchronous reset in the waveform viewer:
+
+![image](https://github.com/user-attachments/assets/eb8036b8-0694-436a-a483-1863b0a3b532)
+
+OBSERVATION : From the waveform, it can be observed that the Q output changes to zero when the asynchronous reset is set high, independent of the positive/negative clock edge.
+
+## 2. Asynchronous Set
+
+The velilog code for the Asynchronous set is given below :
+
+```c
+
+module dff_async_set(input clk, input async_set, input d, output reg q);
+	always@(posedge clk, posedge async_set)
+	begin
+		if(async_set)
+			q <= 1'b1;
+		else
+			q <= d;
+	end
+endmodule
+```
+Testbench code is as follows:
+```c
+module tb_dff_async_set; 
+	reg clk, async_set, d;
+	wire q;
+	dff_async_set uut (.clk(clk),.async_set (async_set),.d(d),.q(q));
+
+	initial begin
+		$dumpfile("tb_dff_async_set.vcd");
+		$dumpvars(0,tb_dff_async_set);
+		// Initialize Inputs
+		clk = 0;
+		async_set = 1;
+		d = 0;
+		#3000 $finish;
+	end
+		
+	always #10 clk = ~clk;
+	always #23 d = ~d;
+	always #547 async_set=~async_set; 
+endmodule
+```
+Command steps :
+
+Go to the required directory
+```c
+sudo -i
+cd ~
+cd /home/chandra-shekhar-jha/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+We just need to put few commands as stated below in order to see the waveforms.
+```c
+iverilog dff_async_set.v tb_dff_async_set.v
+ls
+```
+After giving the above command the IVerilog stores the output as ' a.out '
+
+Now let's execute the ' a.out ' file and observe the waveforms.
+```c
+./a.out
+gtkwave tb_dff_async_set.vcd
+```
+Below is the Snapshot of the above commands and the resultant Waveforms:
+
+![image](https://github.com/user-attachments/assets/a658af31-7170-4203-8804-1d9c111c93bd)
+
+OBSERVATION : From the waveform, it can be observed that the Q output changes to one when the asynchronous set is set high, independent of the positive/negative clock edge.
+
+## 3. Synchronous Reset
+
+The velilog code for the Synchronous reset is given below :
+```c
+
+module dff_syncres(input clk, input sync_reset, input d, output reg q);
+	always@(posedge clk)
+	begin
+		if(sync_reset)
+			q <= 1'b0;
+		else
+			q <= d;
+	end
+endmodule
+```
+Testbench code is as follows:
+```c
+module tb_dff_syncres; 
+	reg clk, syncres, d;
+	wire q;
+	dff_asyncres uut (.clk(clk),.sync_reset (sync_reset),.d(d),.q(q));
+
+	initial begin
+		$dumpfile("tb_dff_syncres.vcd");
+		$dumpvars(0,tb_dff_syncres);
+		// Initialize Inputs
+		clk = 0;
+		sync_reset = 1;
+		d = 0;
+		#3000 $finish;
+	end
+		
+	always #10 clk = ~clk;
+	always #23 d = ~d;
+	always #547 sync_reset=~async_reset; 
+endmodule
+```
+Command steps :
+
+Go to the required directory
+```
+sudo -i
+cd ~
+cd /home/chandra-shekhar-jha/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+We just need to put few commands as stated below in order to see the waveforms.
+```
+iverilog dff_syncres.v tb_dff_syncres.v
+
+```
+After giving the above command the IVerilog stores the output as ' a.out '
+
+Now let's execute the ' a.out ' file and observe the waveforms.
+```
+./a.out
+gtkwave tb_dff_syncres.vcd
+```
+Below is the Snapshot of the above commands and the resultant Waveforms:
 
