@@ -599,6 +599,235 @@ Now let's Create a Graphical Representation
 ```
 show
 ```
+![image](https://github.com/user-attachments/assets/373c65c6-3d58-4272-bd4d-78e3dad0f4a8)
 
+## 3. 3 input AND gate.
+
+The velilog code is given below :
+```c
+module opt_check2(input a, input b, input c, output y);
+	assign y = a?(b?c:0):0;
+endmodule
+```
+Command steps :
+
+Go to the required directory
+```
+cd ~
+sudo -i
+cd ~
+cd /home/vlsi/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+This will invoke/start the yosys
+```
+yosys       
+```
+Read the library
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+Read the design verilog files
+```
+read_verilog opt_check3.v
+```
+Synthesize the Design
+```
+synth -top opt_check3
+```
+![image](https://github.com/user-attachments/assets/f3b37522-7452-4c2a-9ba7-86dc03529d46)
+
+Now Generate the Netlist
+```
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+Removes unused or redundant logic in the design and purges any dangling wires or gates.
+```
+opt_clean -purge
+```
+Now let's Create a Graphical Representation
+```
+show
+```
+![image](https://github.com/user-attachments/assets/e5d0da6b-e95a-4fc6-ba45-1cd7016265dd)
+
+## 4. 2 input XNOR Gate (3 input Boolean Logic)
+
+The velilog code is given below :
+```
+module opt_check2(input a, input b, input c, output y);
+	assign y = a ? (b ? ~c : c) : ~c;
+endmodule
+```
+Command steps :
+
+Go to the required directory
+```
+cd ~
+sudo -i
+cd ~
+cd /home/vlsi/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+This will invoke/start the yosys
+```
+yosys       
+```
+Read the library
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+Read the design verilog files
+```
+read_verilog opt_check4.v
+```
+Synthesize the Design
+```
+synth -top opt_check4
+```
+![image](https://github.com/user-attachments/assets/c03723f7-3a64-47b9-8de8-53978e6cd6e7)
+
+Now Generate the Netlist
+```
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+Removes unused or redundant logic in the design and purges any dangling wires or gates.
+```
+opt_clean -purge
+```
+Now let's Create a Graphical Representation
+```
+show
+```
+![image](https://github.com/user-attachments/assets/ea59862c-65cb-44d8-a700-3c8ea2b5956b)
+
+## 5. Multiple Module Optimization-1
+
+The velilog code is given below :
+```
+module sub_module1(input a, input b, output y);
+	assign y = a & b;
+endmodule
+
+module sub_module2 (input a, input b output y);
+	assign y = a^b;
+endmodule
+
+module multiple_module_opt(input a, input b input c, input d output y);
+	wire n1,n2, n3;
+
+	sub_module1 U1 (.a(a), .b(1'b1), .y(n1));
+	sub_module2 U2 (.a(n1), .b(1'b0), .y(n));
+	sub_module2 U3 (.a(b), .b(d), .y(n3));
+
+	assign y = c | (b & n1);
+endmodule
+```
+Command steps :
+
+Go to the required directory
+```c
+cd ~
+sudo -i
+cd ~
+cd /home/vlsi/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+This will invoke/start the yosys
+```
+yosys       
+```
+Read the library
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+Read the design verilog files
+```c
+read_verilog multiple_module_opt.v
+```
+Synthesize the Design
+```c
+synth -top multiple_module_opt
+```
+![image](https://github.com/user-attachments/assets/11257847-22c4-47be-8386-6a372cc2b3e8)
+
+Now Generate the Netlist
+```
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+Removes unused or redundant logic in the design and purges any dangling wires or gates.
+```
+opt_clean -purge
+```
+Use of Flattening: Merges all hierarchical modules in the design into a single module to create a flat netlist for this just type
+```
+flatten
+```
+Now let's Create a Graphical Representation
+```
+show
+```
+![image](https://github.com/user-attachments/assets/13d628c4-239b-4efe-a2a6-3aad33483f8f)
+
+
+
+## 6. Multiple Module Optimization-2
+
+The velilog code is given below :
+```c
+module sub_module(input a input b output y);
+	assign y = a & b;
+endmodule
+
+module multiple_module_opt2(input a, input b input c, input d, output y);
+	wire n1,n2, n3;
+
+	sub_module U1 (.a(a), .b(1'b0), y(n));
+	sub_module U2 (.a(b), .b(c), .y(n2));
+	sub_module U3 (.a(n2), .b(d), .y(n));
+	sub_module U4 (.a(n3), .b(n1), .y(y));
+endmodule
+```
+Command steps :
+
+Go to the required directory
+```
+cd ~
+sudo -i
+cd ~
+cd /home/vlsi/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
+This will invoke/start the yosys
+```
+yosys       
+```
+Read the library
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+Read the design verilog files
+```
+read_verilog multiple_module_opt2.v
+```
+Synthesize the Design
+```
+synth -top multiple_module_opt2
+```
+![image](https://github.com/user-attachments/assets/866a571e-a478-4585-8135-de9a80f3b515)
+
+Now Generate the Netlist
+```
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+Removes unused or redundant logic in the design and purges any dangling wires or gates.
+```
+opt_clean -purge
+```
+Use of Flattening: Merges all hierarchical modules in the design into a single module to create a flat netlist for this just type
+```
+flatten
+```
+Now let's Create a Graphical Representation
+```
+show
+```
+![image](https://github.com/user-attachments/assets/1af0f686-38fc-4823-a2cb-2369aab3a148)
 
 </details>
