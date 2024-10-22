@@ -502,6 +502,56 @@ dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
 ![image](https://github.com/user-attachments/assets/ba7c91a1-e1f0-42a3-852f-a9d8c05786b1)
+
+## Generating the netlist for the special case circuits.
+
+ ## Multiplication by a factor of 2: 
+ 
+ In this circuit, there are no special hardware multipler blocks are not required for the implementation. Rather we will append zero bit to the LSB of the number effectively shifting it to the left. The same can be seen the netlist images generated from the below commands.
+
+```c
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog mult_2.v
+synth -top mul2
+show
+write_verilog -noattr mul2_netlist.v
+!gvim mul2_netlist.v
+```
+As we can see that there is no hardware involved hence the command of `abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib` says don't call the ABC function as there is nothing to map.
+
+![image](https://github.com/user-attachments/assets/488e52e5-951b-42a4-a0e2-814f6be548aa)
+
+![image](https://github.com/user-attachments/assets/e90ea14e-abdc-4f95-bf8f-e34afa3b7e3f)
+
+![image](https://github.com/user-attachments/assets/7e969d77-1ad7-4c66-b9e6-e0c74c9f0da1)
+
+
+## Multiplication by a factor of 9:
+
+Similar to the previous one, here for multiplication of the given number with a factor of 9 will be implemented without the use of any hardware cells, memories, etc.
+
+Below are the commands and the respective screenshots:
+
+```c
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog mult_8.v
+synth -top mult8
+show
+write_verilog -noattr mult8_netlist.v
+!gvim mult8_netlist.v
+```
+![Screenshot from 2024-10-22 11-20-50](https://github.com/user-attachments/assets/6467c708-4dba-47a4-bef0-15fa821327ef)
+
+![image](https://github.com/user-attachments/assets/34baaca2-c70c-4bfc-b6d8-c2e1494c1a76)
+
+![image](https://github.com/user-attachments/assets/9f00b20a-ad85-4a90-98dc-8fd55b2d571e)
+
+
+
+
+
 </details>
 <details>
 <summary>Day-3</summary>
