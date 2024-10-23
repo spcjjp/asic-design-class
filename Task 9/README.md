@@ -47,3 +47,16 @@ cd /home/chandra-shekhar-jha/VLSI/sky130RTLDesignAndSynthesisWorkshop/src/module
 ```
   synth -top rvmyth
 ```
+![Screenshot from 2024-10-23 23-51-09](https://github.com/user-attachments/assets/02b950ed-af18-4d75-9c2e-32580f741e23)
+
+### Now Generate the Netlist
+```c
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+write_verilog -noattr rvmyth.v
+!gvim rvmyth.v
+exit
+```
+![Screenshot from 2024-10-23 23-50-40](https://github.com/user-attachments/assets/c89d92fe-12c6-406b-b461-fe5a8ea50005)
+
+
+
