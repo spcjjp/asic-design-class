@@ -58,6 +58,11 @@ exit
 ```
 ![Screenshot from 2024-10-23 23-50-40](https://github.com/user-attachments/assets/c89d92fe-12c6-406b-b461-fe5a8ea50005)
 
+## The Heirarchy of the Net list is shown below :
+
+![Screenshot from 2024-10-21 15-13-35](https://github.com/user-attachments/assets/4065ac6f-af5b-4387-8829-53db7b544057)
+
+
 ## Now let`s Observe the output waveform of synthesised RISC-V
  ### Steps:
 
