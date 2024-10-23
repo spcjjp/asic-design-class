@@ -89,7 +89,3 @@ gtkwave pre_synth_sim.vcd
 
 ## Conclusion:- From the above output we can observe a sawtooth waveform and thus we can say that the output O2 which we get from GLS is same as that of the functional simulation O1. Hence O1 = O2.
 
-The Heirarchy of the Net list is shown below :
-
-![Screenshot from 2024-10-21 15-13-35](https://github.com/user-attachments/assets/4065ac6f-af5b-4387-8829-53db7b544057)
-
