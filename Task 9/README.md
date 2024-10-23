@@ -58,5 +58,21 @@ exit
 ```
 ![Screenshot from 2024-10-23 23-50-40](https://github.com/user-attachments/assets/c89d92fe-12c6-406b-b461-fe5a8ea50005)
 
+## Now let`s Observe the output waveform of synthesised RISC-V
+ ### Steps:
+
+ ![Screenshot from 2024-10-24 01-55-56](https://github.com/user-attachments/assets/11293b34-daa3-4655-9035-82eee9f9af2d)
+
+ ![Screenshot from 2024-10-24 01-42-15](https://github.com/user-attachments/assets/c86e9e02-700e-480f-adfc-738a35692790)
+
+ ## Functional Simulations 
+ Commands to get the waveform:
+ ```c
+cd ~
+cd VSDBabySoC
+iverilog -o ./pre_synth_sim.out -DPRE_SYNTH_SIM src/module/testbench.v -I src/include -I src/module/
+./pre_synth_sim.out
+gtkwave pre_synth_sim.vcd
+```
 
 
