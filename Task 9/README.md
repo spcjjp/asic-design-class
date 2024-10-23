@@ -77,3 +77,8 @@ gtkwave pre_synth_sim.vcd
 
 ![Screenshot from 2024-10-24 01-26-27](https://github.com/user-attachments/assets/c2a2c43c-18eb-4c68-9d93-2c7b409315ee)
 
+## Comparison
+
+![Screenshot from 2024-10-24 01-26-27](https://github.com/user-attachments/assets/ab59ad65-84d3-4fa2-85b8-d1ae3b75cdd3)
+
+
