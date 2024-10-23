@@ -12,7 +12,7 @@
 ```c
 
 sudo -i
-cd /home/chandra-shekhar-jha/VLSI/
+cd /home/satya/vlsi/
 cp -r src sky130RTLDesignAndSynthesisWorkshop/
 ```
 * 2.Navigate to the Target Directory:
@@ -21,7 +21,7 @@ cp -r src sky130RTLDesignAndSynthesisWorkshop/
  ```c
 
 cd ~
-cd /home/chandra-shekhar-jha/VLSI/sky130RTLDesignAndSynthesisWorkshop/src/module
+cd /home/satya/vlsi/sky130RTLDesignAndSynthesisWorkshop/src/module
 ```
 * 3.Synthesis Process:
 
