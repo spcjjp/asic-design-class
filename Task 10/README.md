@@ -44,5 +44,6 @@ As we can see in the below snapshots that for a given clock period (9.15) the de
 
 ![Screenshot from 2024-10-28 22-06-21](https://github.com/user-attachments/assets/29cb3461-c457-4926-8e12-c967b78a2a57)
 
-![Screenshot from 2024-10-28 22-06-21](https://github.com/user-attachments/assets/0342b7b9-3f69-4437-b3f0-da849b907108)
+![image](https://github.com/user-attachments/assets/11155a50-d3e1-4ee5-a682-68b1440e259a)
+
 
