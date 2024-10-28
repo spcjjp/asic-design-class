@@ -39,10 +39,34 @@ set_input_transition [expr 0.08 * 9.15] [all_inputs]
 report_checks -path_delay max
 report_checks -path_delay min
 ```
+To execute the OpenSTA and obtain the timing reports, run the below command,
+```c
+sta scripts/sta.conf
+```
+Following are contents of the sta.conf file,
+```
+read_liberty -min ./lib/sta/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty -max ./lib/sta/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty -min ./lib/avsdpll.lib
+read_liberty -max ./lib/avsdpll.lib
+read_liberty -min ./lib/avsddac.lib
+read_liberty -max ./lib/avsddac.lib
+read_verilog ./src/module/vsdbabysoc_synth.v
+link_design vsdbabysoc
+read_sdc ./src/sdc/sta_post_synth.sdc
+```
 
-As we can see in the below snapshots that for a given clock period (9.15) the design is showing setup and hold violations.
+
+In the below screenshot, we can observe the timing report for a reg2reg max path, 
 
 ![Screenshot from 2024-10-28 22-06-21](https://github.com/user-attachments/assets/29cb3461-c457-4926-8e12-c967b78a2a57)
+
+
+```c
+report_checks -path_delay min
+
+```
+Below screenshot shows the reg2reg min path report,
 
 ![image](https://github.com/user-attachments/assets/11155a50-d3e1-4ee5-a682-68b1440e259a)
 
