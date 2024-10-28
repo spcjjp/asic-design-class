@@ -2,7 +2,7 @@
 <summary>Static Timing Analysis for a Synthesized RISC-V Core with OpenSTA </summary>
 <br>
 
-## In this task STA was performed on the RV core netlist generated with yosy
+## In this task STA was performed on the RV core netlist generated with yosys
 
 ### openSTA
 ```c
