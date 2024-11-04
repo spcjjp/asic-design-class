@@ -74,6 +74,27 @@ Run below commands on terminal to source the sta_pvt.tcl file
 
 ![image](https://github.com/user-attachments/assets/b6d64b49-5b14-480b-83e5-753c7bba0995)
 
+![image](https://github.com/user-attachments/assets/992a70ee-5344-4ca5-aa5c-1c682449f054)
+
+![image](https://github.com/user-attachments/assets/019196cb-801a-40d2-adb7-34270768f97b)
+
+![image](https://github.com/user-attachments/assets/b7198306-f79b-461f-87c9-c21c44b893c4)
+
+![image](https://github.com/user-attachments/assets/8f589b22-bca8-4554-9c96-e29682d2046e)
+
+## Colnclusion:
+
+From the above analysis we can conclude that
+
+1.  sky130_fd_sc_hd__ss_n40C_1v28.lib Library file has the worst setup slack
+2.  sky130_fd_sc_hd__ff_100C_1v95.lib Library file has the worst hold slack
+
+
+
+
+
+
+
 
 
 
