@@ -63,3 +63,9 @@ set_input_transition [expr $PERIOD * 0.08] [get_ports VREFH]
 
 Run below commands on terminal to source the sta_pvt.tcl file
 
+![Screenshot from 2024-11-05 01-19-05](https://github.com/user-attachments/assets/af34b9b1-702f-4160-b7be-8b1b8d8f54d8)
+
+
+![image](https://github.com/user-attachments/assets/cde08c1d-084f-484b-a41a-5381431d2fd7)
+
+
