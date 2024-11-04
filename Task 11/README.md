@@ -31,24 +31,24 @@ read_sdc /home/tushar-katole/VSDBabySoC/src/sdc/vsdbabysoc_synthesis.sdc
 check_setup -verbose
 report_checks -path_delay min_max -fields {nets cap slew input_pins fanout} -digits {4} > /home/tushar-katole/VSDBabySoC/src/sta_output/min_max_$list_of_lib_files($i).txt
 
-exec echo "$list_of_lib_files($i)" >> /home/tushar-katole/VSDBabySoC/src/sta_output/sta_worst_max_slack.txt
-report_worst_slack -max -digits {4} >> /home/tushar-katole/VSDBabySoC/src/sta_output/sta_worst_max_slack.txt
+exec echo "$list_of_lib_files($i)" >> /home/satya/VSDBabySoC/src/sta_output/sta_worst_max_slack.txt
+report_worst_slack -max -digits {4} >> /home/satya/VSDBabySoC/src/sta_output/sta_worst_max_slack.txt
 
-exec echo "$list_of_lib_files($i)" >> /home/tushar-katole/VSDBabySoC/src/sta_output/sta_worst_min_slack.txt
-report_worst_slack -min -digits {4} >> /home/tushar-katole/VSDBabySoC/src/sta_output/sta_worst_min_slack.txt
+exec echo "$list_of_lib_files($i)" >> /home/satya/VSDBabySoC/src/sta_output/sta_worst_min_slack.txt
+report_worst_slack -min -digits {4} >> /home/satyaVSDBabySoC/src/sta_output/sta_worst_min_slack.txt
 
-exec echo "$list_of_lib_files($i)" >> /home/tushar-katole/VSDBabySoC/src/sta_output/sta_tns.txt
+exec echo "$list_of_lib_files($i)" >> /home/satya/VSDBabySoC/src/sta_output/sta_tns.txt
 report_tns -digits {4} >> /home/tushar-katole/VSDBabySoC/src/sta_output/sta_tns.txt
 
-exec echo "$list_of_lib_files($i)" >> /home/tushar-katole/VSDBabySoC/src/sta_output/sta_wns.txt
-report_wns -digits {4} >> /home/tushar-katole/VSDBabySoC/src/sta_output/sta_wns.txt
+exec echo "$list_of_lib_files($i)" >> /home/satya/VSDBabySoC/src/sta_output/sta_wns.txt
+report_wns -digits {4} >> /home/satya/VSDBabySoC/src/sta_output/sta_wns.txt
 
 }
 ```
 
 ### The SDC file used for generating clock and data constraints is given below:
 ```c
-create_clock -name CLK -period 10 [get_ports CLK]
+create_clock -name CLK -period 9.15 [get_ports CLK]
 set_clock_uncertainty [expr 0.05 * 10] -setup [get_clocks CLK]
 set_clock_uncertainty [expr 0.08 * 10] -hold [get_clocks CLK]
 set_clock_transition [expr 0.05 * 10] [get_clocks CLK]
@@ -60,6 +60,10 @@ set_input_transition [expr $PERIOD * 0.08] [get_ports REF]
 set_input_transition [expr $PERIOD * 0.08] [get_ports VCO_IN]
 set_input_transition [expr $PERIOD * 0.08] [get_ports VREFH]
 ```
+A table comprising of the slacks report is shown below:
+
+![Screenshot from 2024-11-05 01-58-18](https://github.com/user-attachments/assets/ef373fd8-d551-4c2f-b0af-7522e92730a7)
+
 
 Run below commands on terminal to source the sta_pvt.tcl file
 
