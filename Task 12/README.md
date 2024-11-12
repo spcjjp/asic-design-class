@@ -316,6 +316,23 @@ Rise Transition Time = 2.2424-2.1819 = 0.0605 = 60.6 ps
                                             =   0.05712
                                             = 57.12 ps
 
+### Fall Cell dealay Claclulation:
+
+    Difference in time(50% output fall) to time(50% input rise)
+
+    50% Snapshot:
+
+![Screenshot from 2024-11-13 02-28-52](https://github.com/user-attachments/assets/07c4a691-c8a4-45f9-921a-11325eb0e43f)
+
+                        Fall Cell DElay = 4.069 - 4.05
+                                        = 0.019
+                                        = 19 ps
+
+## 6. Find problem in the DRC section of the old magic tech file for the skywater process and fix them.
+
+Commands to download and view the corrupted skywater process magic tech file and associated files to perform drc corrections
+
+
 
 
 
