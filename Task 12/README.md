@@ -1,3 +1,8 @@
+<details>
+<summary>Advanced Physical Design using OpenLane using Sky130</summary>
+<summary> DAY 1: Introduction to open-source EDA, OpenLANE and Sky130 PDK </summary>
+
+
 ### Synthesis in OPENLANE
 ```c
 cd Desktop/work/tools/openlane_working_dir/openlane
