@@ -268,10 +268,24 @@ Screenshot of generated plot
 ![Screenshot from 2024-11-13 00-37-03](https://github.com/user-attachments/assets/96377829-f77a-44db-8824-49279c16bf92)
 
 
-Rise Transition time Calculation
+* Rise Transition time Calculation
 
+Rise transition time = time taken to output to rise from 80% - Time taken for output to rise to 20%
+             20% oF output = 660mv
+             80% of output = 2.64v
+             
 
+20% Screenshots
 
+![Screenshot from 2024-11-13 01-04-12](https://github.com/user-attachments/assets/e14fef90-602d-4a9b-b9d2-75cf8fe18014)
+
+![Screenshot from 2024-11-13 01-05-16](https://github.com/user-attachments/assets/fecd3344-94d9-461d-b44c-dc17a4ff818d)
+
+80% ScreenShots
+
+![Screenshot from 2024-11-13 01-07-29](https://github.com/user-attachments/assets/ae9e816d-de66-4ef4-be81-5fe8119e45bf)
+
+![Uploading Screenshot from 2024-11-13 01-07-15.png…]()
 
 
 
