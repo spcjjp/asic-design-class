@@ -248,6 +248,31 @@ Measuring unit distance in layout grid
 
 Final edited spice file ready for ngspice simulation
 
+![Screenshot from 2024-11-13 00-29-54](https://github.com/user-attachments/assets/1096d186-9cc2-4570-9015-6f9a09006163)
+
+### 5. Post-layout ngspice simulations.
+
+Commands for ngspice simulation
+
+```c
+ngspice sky130_inv.spice
+plot y vs time a
+```
+Screenshots of ngspice run
+![Screenshot from 2024-11-13 00-33-18](https://github.com/user-attachments/assets/bd1b583f-5c2c-4c0a-9072-7ff84b155d4d)
+
+![Screenshot from 2024-11-13 00-33-38](https://github.com/user-attachments/assets/85c5f490-6afd-49c6-afc6-490526c9f7a8)
+
+Screenshot of generated plot
+
+![Screenshot from 2024-11-13 00-37-03](https://github.com/user-attachments/assets/96377829-f77a-44db-8824-49279c16bf92)
+
+
+Rise Transition time Calculation
+
+
+
+
 
 
 
