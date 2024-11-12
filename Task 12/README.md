@@ -361,6 +361,9 @@ New commands inserted in sky130A.tech file to update drc
 
 Screenshot of magic window with rule implemented
 
+![Screenshot 2024-11-13 025622](https://github.com/user-attachments/assets/4fda1a24-b2c1-42ea-b4ae-7cf7b42db5e2)
+
+
 
 
 
