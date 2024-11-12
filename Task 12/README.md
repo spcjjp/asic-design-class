@@ -16,15 +16,32 @@ run_synthesis
 ```
 ![Screenshot from 2024-11-12 18-03-29](https://github.com/user-attachments/assets/1d0e95a2-fb72-4542-b048-75742db9dded)
 
+### For Netlist:
+
+```
+cd designs/picorv32a/runs/09-11_06-33/results/synthesis/
+gedit picorv32a.synthesis.v
+```
 ![Screenshot from 2024-11-12 18-45-02](https://github.com/user-attachments/assets/c3d8f2cf-78a4-496a-88e2-402fba71e741)
 
 
 ![Screenshot from 2024-11-12 18-43-21](https://github.com/user-attachments/assets/f459ce1f-d2a6-4ea4-85e0-2d9a3ae599f9)
 
-
+### FOR YOSYS:
+```c
+cd ../..
+cd reports/synthesis
+gedit 1-yosys_4.stat.rpt
+```
 ![Screenshot from 2024-11-12 18-58-40](https://github.com/user-attachments/assets/99fc8587-f33e-4a1e-bde0-01579e4ba476)
 
 ![Screenshot from 2024-11-12 19-00-15](https://github.com/user-attachments/assets/690992f5-6df3-466a-8b7a-7de4491964ec)
+
+</details>
+
+<details> 
+<sumary> Day-2: Good floorplan vs bad floorplan and introduction to library cells
+</sumary>
 
 ## Floor Planning using OPENLANE:
 
