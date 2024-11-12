@@ -330,9 +330,36 @@ Rise Transition Time = 2.2424-2.1819 = 0.0605 = 60.6 ps
 
 ## 6. Find problem in the DRC section of the old magic tech file for the skywater process and fix them.
 
-Commands to download and view the corrupted skywater process magic tech file and associated files to perform drc corrections
+Commands to download and view the corrupted skywater process magic tech file and associated files to perform drc corrections:
+```
+cd
+wget http://opencircuitdesign.com/open_pdks/archive/drc_tests.tgz
+tar xfz drc_tests.tgz
+cd drc_tests
+ls -al
+gvim .magicrc
+magic -d XR &
+```
+Snapshot of the command run on terminal:
+
+![Screenshot from 2024-11-13 02-35-04](https://github.com/user-attachments/assets/4b8d1e03-c0dd-4f46-9194-434b64c4134d)
 
 
+Screenshot of .magicrc file
+
+![Screenshot from 2024-11-13 02-35-42](https://github.com/user-attachments/assets/a3f0dd28-368c-43dc-af8c-0aaca1a70306)
+
+![Screenshot from 2024-11-13 02-39-36](https://github.com/user-attachments/assets/97912a85-d6c0-4393-8cad-9e65944c101d)
+
+![Screenshot from 2024-11-13 02-40-58](https://github.com/user-attachments/assets/a4a9883b-a82b-465a-995e-1f985f96bc08)
+
+New commands inserted in sky130A.tech file to update drc
+
+![Screenshot from 2024-11-13 02-50-32](https://github.com/user-attachments/assets/9bc6060e-648d-4e29-bffe-6ddf010fb319)
+
+![Screenshot from 2024-11-13 02-53-32](https://github.com/user-attachments/assets/479ce1c0-055a-4777-8e82-c543e82dfa0b)
+
+Screenshot of magic window with rule implemented
 
 
 
