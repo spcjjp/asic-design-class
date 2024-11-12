@@ -141,7 +141,8 @@ These steps are compiled into a configuration file and input into a characteriza
 ### Timing parameters
 
 Timing definition	Value
-![Screenshot from 2024-11-12 21-48-18](https://github.com/user-attachments/assets/01783453-a964-4ec1-af4f-be5203033d2d)
+
+![Screenshot from 2024-11-12 21-48-18](https://github.com/user-attachments/assets/580cf076-7a2e-4782-abb4-9f5563a411b0)
 
 ### Propagation Delay: 
 It refers to the time it takes for a change in an input signal to reach 50% of its final value to produce a corresponding change in the output signal to reach 50% of its final value of a digital circuit.
