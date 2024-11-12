@@ -215,6 +215,9 @@ NMOS source connectivity to VSS (here VGND) verified
 Deleting necessary layout part to see DRC error
 
 
+![image](https://github.com/user-attachments/assets/ae9a7a73-89e1-4d0b-a7dd-67ae285d79ae)
+
+
 
 
 
