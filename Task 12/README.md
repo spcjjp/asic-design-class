@@ -285,7 +285,7 @@ Rise transition time = time taken to output to rise from 80% - Time taken for ou
 
 ![Screenshot from 2024-11-13 01-07-29](https://github.com/user-attachments/assets/ae9e816d-de66-4ef4-be81-5fe8119e45bf)
 
-![Uploading Screenshot from 2024-11-13 01-07-15.png…]()
+![Screenshot from 2024-11-13 01-07-15](https://github.com/user-attachments/assets/b221c712-17d3-4879-93b2-9c49ab70b55f)
 
 
 
