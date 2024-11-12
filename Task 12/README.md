@@ -67,5 +67,13 @@ gedit picorv32a.floorplan.def
 
 ![Screenshot from 2024-11-12 19-30-34](https://github.com/user-attachments/assets/ddd92519-d776-4ada-90b2-896b1f420fd2)
 
+### Decap Cells and Tap Cells
+
+![Screenshot from 2024-11-12 20-18-52](https://github.com/user-attachments/assets/cf6da022-82d8-46a4-a663-1b830cd78c53)
+
+### Unplaces standard cells at origin:
+
+![Screenshot from 2024-11-12 20-20-25](https://github.com/user-attachments/assets/77150f63-263c-4e27-956c-2d17dbed945c)
+
 
 </details>
