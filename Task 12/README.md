@@ -172,6 +172,22 @@ Rise transition time: time(slew_high_rise_thr) - time(slew_low_rise_thr)
 
 ![image](https://github.com/user-attachments/assets/f884a747-3092-4267-a168-ba6ae190f585)
 
+![image](https://github.com/user-attachments/assets/4293e213-2516-4a91-ab2f-e9835b3ee896)
+
+### 1. Clone custom inverter standard cell design from github repository
+
+Pate the foloowing command in terminal:
+
+```c
+cd Desktop/work/tools/openlane_working_dir/openlane
+git clone https://github.com/nickson-jose/vsdstdcelldesign
+cd vsdstdcelldesign
+cp /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech .
+ls
+magic -T sky130A.tech sky130_inv.mag &
+
+```
+
   
 
   
