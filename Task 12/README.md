@@ -167,6 +167,13 @@ Rise transition time: time(slew_high_rise_thr) - time(slew_low_rise_thr)
 <details>
 
   <summary>Day 3: Design library cell using Magic Layout and ngspice characterization</summary>
+
+  ## Spice Deck:
+
+![image](https://github.com/user-attachments/assets/f884a747-3092-4267-a168-ba6ae190f585)
+
+  
+
   
 </details>
 
