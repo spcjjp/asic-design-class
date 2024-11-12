@@ -233,6 +233,28 @@ ext2spice cthresh 0 rthresh 0
 # Converting to ext to spice
 ext2spice
 
+Screenshot of tkcon window after running above commands
+
+![Screenshot from 2024-11-13 00-16-49](https://github.com/user-attachments/assets/f5a75e91-c204-4fdf-bf7e-4334cb60ec33)
+
+Screenshot of created spice file
+
+![Screenshot from 2024-11-13 00-20-44](https://github.com/user-attachments/assets/9b9ac2ad-40bc-40d0-a1bb-4b116dfdbdd9)
+
+### 4. Editing the spice model file for analysis through simulation.
+
+Measuring unit distance in layout grid
+![Screenshot from 2024-11-13 00-23-48](https://github.com/user-attachments/assets/1c9cc0e8-9702-4a5f-a44f-78f31d39a231)
+
+Final edited spice file ready for ngspice simulation
+
+
+
+
+
+
+
+
 
 
 
