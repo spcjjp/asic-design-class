@@ -220,7 +220,7 @@ Deleting necessary layout part to see DRC error
 ### 3. Spice extraction of inverter in magic.
 
 Commands for spice extraction of the custom inverter layout to be used in tkcon window of magic
-
+```c
 # Check current directory
 pwd
 
@@ -232,7 +232,7 @@ ext2spice cthresh 0 rthresh 0
 
 # Converting to ext to spice
 ext2spice
-
+```
 Screenshot of tkcon window after running above commands
 
 ![Screenshot from 2024-11-13 00-16-49](https://github.com/user-attachments/assets/f5a75e91-c204-4fdf-bf7e-4334cb60ec33)
@@ -304,7 +304,8 @@ Rise Transition Time = 2.2424-2.1819 = 0.0605 = 60.6 ps
                                              = 43.89 ps
  
  ### Rise Cell Delay Calculation:
-        Difference in time(50% output rise) to time(50% input fall)
+      
+  Difference in time(50% output rise) to time(50% input fall)
 
   50% Screenshots:
 
@@ -318,9 +319,9 @@ Rise Transition Time = 2.2424-2.1819 = 0.0605 = 60.6 ps
 
 ### Fall Cell dealay Claclulation:
 
-    Difference in time(50% output fall) to time(50% input rise)
+   Difference in time(50% output fall) to time(50% input rise)
 
-    50% Snapshot:
+  50% Snapshot:
 
 ![Screenshot from 2024-11-13 02-28-52](https://github.com/user-attachments/assets/07c4a691-c8a4-45f9-921a-11325eb0e43f)
 
