@@ -40,8 +40,7 @@ gedit 1-yosys_4.stat.rpt
 </details>
 
 <details> 
-<sumary> Day-2: Good floorplan vs bad floorplan and introduction to library cells
-</sumary>
+<sumary> Day-2: Good floorplan vs bad floorplan and introduction to library cells</sumary>
 
 ## Floor Planning using OPENLANE:
 
