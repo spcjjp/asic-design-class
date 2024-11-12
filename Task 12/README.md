@@ -162,5 +162,12 @@ The time it takes the signal to move between states is the transition time , whe
 Fall transition time: time(slew_high_fall_thr) - time(slew_low_fall_thr)
 Rise transition time: time(slew_high_rise_thr) - time(slew_low_rise_thr)
 ```
+</details>
+
+<details>
+
+  <summary>Day 3: Design library cell using Magic Layout and ngspice characterization</summary>
+  
+</details>
 
 </details>
