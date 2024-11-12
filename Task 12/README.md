@@ -217,6 +217,21 @@ Deleting necessary layout part to see DRC error
 
 ![image](https://github.com/user-attachments/assets/ae9a7a73-89e1-4d0b-a7dd-67ae285d79ae)
 
+### 3. Spice extraction of inverter in magic.
+
+Commands for spice extraction of the custom inverter layout to be used in tkcon window of magic
+
+# Check current directory
+pwd
+
+# Extraction command to extract to .ext format
+extract all
+
+# Before converting ext to spice this command enable the parasitic extraction also
+ext2spice cthresh 0 rthresh 0
+
+# Converting to ext to spice
+ext2spice
 
 
 
