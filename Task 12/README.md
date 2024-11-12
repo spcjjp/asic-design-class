@@ -110,30 +110,37 @@ PDKs (Process Design Kits): Includes DRC & LVS (Design Rule Checks & Layout Vers
 
 ### Design Steps
 
-1.Circuit Design
-2.Layout Design: Employ techniques such as Euler's path and stick diagrams.
-3.Parasitic Extraction
-4.Characterization: Evaluate timing, noise, and power.
+* 1.Circuit Design
+* 2.Layout Design: Employ techniques such as Euler's path and stick diagrams.
+* 3.Parasitic Extraction
+* 4.Characterization: Evaluate timing, noise, and power.
 
 ### Outputs
 
-1.CDL (Circuit Description Language)
-2.LEF (Library Exchange Format)
-3.GDSII (for layout)
-4.Extracted SPICE netlist (.cir)
-5.Timing, noise, and power .lib files
+* 1.CDL (Circuit Description Language)
+* 2.LEF (Library Exchange Format)
+* 3.GDSII (for layout)
+* 4.Extracted SPICE netlist (.cir)
+* 5.Timing, noise, and power .lib files
 
 ## Standard Cell Characterization Flow
 
 The following steps are typical in standard cell characterization:
 
 1.Load Models and Technology Files
+
 2.Read the Extracted SPICE Netlist
+
 3.Identify Cell Behavior
+
 4.Load Subcircuits
+
 5.Connect Power Sources
+
 6.Apply Stimuli to Characterization Setup
+
 7.Provide Necessary Output Capacitance Loads
+
 8.Add Required Simulation Commands
 
 These steps are compiled into a configuration file and input into a characterization tool, such as GUNA, which then generates timing, noise, and power models. These .lib files are categorized based on their characterization type: timing, power, or noise.
