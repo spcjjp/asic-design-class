@@ -1,5 +1,8 @@
 <details>
 <summary>Advanced Physical Design using OpenLane using Sky130</summary>
+
+  </details>
+  <details>
 <summary> DAY 1: Introduction to open-source EDA, OpenLANE and Sky130 PDK </summary>
 
 
