@@ -67,6 +67,11 @@ gedit picorv32a.floorplan.def
 
 ![Screenshot from 2024-11-12 19-30-34](https://github.com/user-attachments/assets/ddd92519-d776-4ada-90b2-896b1f420fd2)
 
+### Equidistant placement of ports
+
+![Screenshot from 2024-11-12 21-48-18](https://github.com/user-attachments/assets/f9eb5a92-de20-40d9-925d-64644ed61630)
+
+
 ### Decap Cells and Tap Cells
 
 ![Screenshot from 2024-11-12 20-18-52](https://github.com/user-attachments/assets/cf6da022-82d8-46a4-a663-1b830cd78c53)
@@ -92,5 +97,62 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 ![Screenshot from 2024-11-12 20-30-36](https://github.com/user-attachments/assets/878895ba-ffc6-47e1-a069-5a9460a6a2fe)
 
+Commands to exit from current run
+```c
+exit # Exit from OpenLANE flow
+exit # Exit from OpenLANE flow docker sub-system
+```
+## Cell Design and Characterization Flow
+A library contains information about each cell, encompassing different sizes, functionalities, and threshold voltages. Below are the steps involved in a standard cell design flow.
+
+### Inputs
+PDKs (Process Design Kits): Includes DRC & LVS (Design Rule Checks & Layout Versus Schematic), SPICE Models, library data, and user-defined specifications.
+
+### Design Steps
+
+1.Circuit Design
+2.Layout Design: Employ techniques such as Euler's path and stick diagrams.
+3.Parasitic Extraction
+4.Characterization: Evaluate timing, noise, and power.
+
+### Outputs
+
+1.CDL (Circuit Description Language)
+2.LEF (Library Exchange Format)
+3.GDSII (for layout)
+4.Extracted SPICE netlist (.cir)
+5.Timing, noise, and power .lib files
+
+## Standard Cell Characterization Flow
+
+The following steps are typical in standard cell characterization:
+
+1.Load Models and Technology Files
+2.Read the Extracted SPICE Netlist
+3.Identify Cell Behavior
+4.Load Subcircuits
+5.Connect Power Sources
+6.Apply Stimuli to Characterization Setup
+7.Provide Necessary Output Capacitance Loads
+8.Add Required Simulation Commands
+
+These steps are compiled into a configuration file and input into a characterization tool, such as GUNA, which then generates timing, noise, and power models. These .lib files are categorized based on their characterization type: timing, power, or noise.
+
+### Timing parameters
+
+Timing definition	Value
+![Screenshot from 2024-11-12 21-48-18](https://github.com/user-attachments/assets/01783453-a964-4ec1-af4f-be5203033d2d)
+
+### Propagation Delay: 
+It refers to the time it takes for a change in an input signal to reach 50% of its final value to produce a corresponding change in the output signal to reach 50% of its final value of a digital circuit.
+```c
+rise delay =  time(out_fall_thr) - time(in_rise_thr)
+```
+### Transistion time: 
+The time it takes the signal to move between states is the transition time , where the time is measured between 10% and 90% or 20% to 80% of the signal levels.
+```c
+Fall transition time: time(slew_high_fall_thr) - time(slew_low_fall_thr)
+Rise transition time: time(slew_high_rise_thr) - time(slew_low_rise_thr)
+```
 
 </details>
