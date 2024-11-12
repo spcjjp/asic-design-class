@@ -187,10 +187,40 @@ ls
 magic -T sky130A.tech sky130_inv.mag &
 
 ```
+Screenshot of the command run:
 
-  
+![Screenshot from 2024-11-12 22-57-47](https://github.com/user-attachments/assets/e11f613b-761d-4193-bc15-99644c6abbea)
 
-  
+### 2. Load the custom inverter layout in magic and explore.
+Screenshot of custom inverter layout in magic
+
+![Screenshot from 2024-11-12 22-59-53](https://github.com/user-attachments/assets/6e46f5ed-d585-40d6-bfe5-2b589c0f36d3)
+
+NMOS and PMOS identified
+
+![Screenshot from 2024-11-12 23-11-06](https://github.com/user-attachments/assets/6d7c9bf9-ccc1-447a-a9c1-2bcddc329e7b)
+
+Output Y connectivity to PMOS and NMOS drain verified
+
+![Screenshot from 2024-11-12 23-14-48](https://github.com/user-attachments/assets/0c4e21fc-1c95-49bb-a7a1-453d3415bacb)
+
+PMOS source connectivity to VDD (here VPWR) verified
+
+![Screenshot from 2024-11-12 23-15-32](https://github.com/user-attachments/assets/8b206dbb-0292-497b-a5b3-fc93d3086f25)
+
+NMOS source connectivity to VSS (here VGND) verified
+
+![Screenshot from 2024-11-12 23-16-17](https://github.com/user-attachments/assets/aed1dd7f-6245-40c9-bec6-2b8154763821)
+
+Deleting necessary layout part to see DRC error
+
+
+
+
+
+
+
+
 </details>
 
 </details>
