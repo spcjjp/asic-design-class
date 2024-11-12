@@ -382,6 +382,73 @@ Commands to open the custom inverter layout
 cd Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
 magic -T sky130A.tech sky130_inv.mag &
   ```
+![Screenshot from 2024-11-13 03-57-22](https://github.com/user-attachments/assets/658b900e-1199-4f70-b048-647e25e7300c)
+
+Commands for tkcon window to set grid as tracks of locali layer
+```c
+help grid
+grid 0.46um 0.34um 0.23um 0.17um
+```
+Snapshot of tht command run
+![Screenshot from 2024-11-13 04-01-34](https://github.com/user-attachments/assets/5a2ad6e7-f349-4d12-9d75-1d864575d368)
+
+Condition 1 verified
+
+![Screenshot from 2024-11-13 04-22-31](https://github.com/user-attachments/assets/a08f7133-b7a9-4426-94a1-a028f5c45b68)
+
+Condition 2 Verified
+
+Condition 3 Cerified
+
+### 2. Save the finalized layout with custom name and open it.
+Command for tkcon window to save the layout with custom name
+```c
+# Command to save as
+save sky130_satyainv.mag
+```
+![Screenshot from 2024-11-13 04-46-53](https://github.com/user-attachments/assets/6c1e535c-19da-4d31-ad9a-81caeffd44f6)
+
+Command to open the newly saved layout
+
+```
+# Command to open custom inverter layout in magic
+magic -T sky130A.tech sky130_satyainv.mag &
+```
+![Screenshot from 2024-11-13 04-50-49](https://github.com/user-attachments/assets/f1fc5a1c-cc1c-4b55-8f88-6366683ef61e)
+
+Now, type the following command in tkcon window:
+```
+lef write
+```
+![Screenshot from 2024-11-13 04-51-58](https://github.com/user-attachments/assets/d0162d55-380b-4d5d-a628-b22b852ae6da)
+
+![Screenshot from 2024-11-13 04-54-00](https://github.com/user-attachments/assets/b5f33119-f51b-4e2a-9f9f-f3c1c37214f6)
+
+Snapshot of newly created lef File
+
+![Screenshot from 2024-11-13 04-55-06](https://github.com/user-attachments/assets/48d81501-5a62-4e0e-9f14-109c2fa83275)
+
+## 4. Copy the newly generated lef and associated required lib files to 'picorv32a' design 'src' directory.
+
+Commands to copy necessary files to 'picorv32a' design 'src' directory
+```
+cp sky130_vsdinv.lef ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
+
+ls ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
+
+cp libs/sky130_fd_sc_hd__* ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
+
+ls ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
+```
+Snapshot of the command run
+
+![Screenshot from 2024-11-13 05-01-24](https://github.com/user-attachments/assets/6b7c1070-40ba-4494-b0cd-ba31f34fb582)
+
+
+
+
+
+
 
 </details>
 
