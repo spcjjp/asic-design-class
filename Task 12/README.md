@@ -287,8 +287,34 @@ Rise transition time = time taken to output to rise from 80% - Time taken for ou
 
 ![Screenshot from 2024-11-13 01-07-15](https://github.com/user-attachments/assets/b221c712-17d3-4879-93b2-9c49ab70b55f)
 
+Rise Transition Time = 2.2424-2.1819 = 0.0605 = 60.6 ps
 
+### Fall Transition time Calculation
 
+20% of Screenshots:
+
+![Screenshot from 2024-11-13 01-16-52](https://github.com/user-attachments/assets/676cfc41-8fa1-4769-98eb-8093171d96ce)
+
+80% Screenshots:
+
+![Screenshot from 2024-11-13 01-19-24](https://github.com/user-attachments/assets/ef2ee5e3-e7d3-4edd-b09e-6f570fe41769)
+
+                          Fall Transition Time= 4.09439 - 4.0505
+                                             = 0.04389
+                                             = 43.89 ps
+ 
+ ### Rise Cell Delay Calculation:
+        Difference in time(50% output rise) to time(50% input fall)
+
+  50% Screenshots:
+
+  ![Screenshot from 2024-11-13 01-26-55](https://github.com/user-attachments/assets/c3eb573d-1e64-401b-a455-8538f5ca6a53)
+
+![Screenshot from 2024-11-13 01-28-52](https://github.com/user-attachments/assets/2dca6696-54db-47a9-a166-2da709296155)
+
+                             Rise Cell Delay =  2.20722 - 2.1501
+                                            =   0.05712
+                                            = 57.12 ps
 
 
 
