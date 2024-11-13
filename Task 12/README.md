@@ -535,6 +535,9 @@ Snaapshot of performed commands:
 
 ![Screenshot from 2024-11-13 14-16-16](https://github.com/user-attachments/assets/2cf0cffb-5d83-49f2-a997-6a3187e5bbbf)
 
+![image](https://github.com/user-attachments/assets/6cc8aa2d-d086-43b2-af8d-e7bb20730907)
+
+
 
 
 
