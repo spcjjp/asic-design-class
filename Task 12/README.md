@@ -1006,4 +1006,68 @@ Screenshots of commands run and timing report generated
 
 </details>
 
+<details>
+  
+<summary>Day 5: Final steps for RTL2GDS using tritonRoute and openSTA </summary>
+
+### 1. Perform generation of Power Distribution Network (PDN) and explore the PDN layout.
+Commands to perform all necessary stages up until now
+```
+# Change directory to openlane flow directory
+cd Desktop/work/tools/openlane_working_dir/openlane
+
+# alias docker='docker run -it -v $(pwd):/openLANE_flow -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) efabless/openlane:v0.21'
+# Since we have aliased the long command to 'docker' we can invoke the OpenLANE flow docker sub-system by just running this command
+docker
+# Now that we have entered the OpenLANE flow contained docker sub-system we can invoke the OpenLANE flow in the Interactive mode using the following command
+./flow.tcl -interactive
+
+# Now that OpenLANE flow is open we have to input the required packages for proper functionality of the OpenLANE flow
+package require openlane 0.9
+
+# Now the OpenLANE flow is ready to run any design and initially we have to prep the design creating some necessary files and directories for running a specific design which in our case is 'picorv32a'
+prep -design picorv32a
+
+# Addiitional commands to include newly added lef to openlane flow merged.lef
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+
+# Command to set new value for SYNTH_STRATEGY
+set ::env(SYNTH_STRATEGY) "DELAY 3"
+
+# Command to set new value for SYNTH_SIZING
+set ::env(SYNTH_SIZING) 1
+
+# Now that the design is prepped and ready, we can run synthesis using following command
+run_synthesis
+
+# Following commands are alltogather sourced in "run_floorplan" command
+init_floorplan
+place_io
+tap_decap_or
+
+# Now we are ready to run placement
+run_placement
+
+# Incase getting error
+unset ::env(LIB_CTS)
+
+# With placement done we are now ready to run CTS
+run_cts
+
+# Now that CTS is done we can do power distribution network
+gen_pdn
+
+```
+Screenshots of power distribution network run
+
+![Screenshot from 2024-11-13 19-07-19](https://github.com/user-attachments/assets/aabb3c94-e565-4b19-8a14-7285cb5ea33b)
+![Screenshot from 2024-11-13 19-08-05](https://github.com/user-attachments/assets/b55a505e-cfa4-4999-b387-42f6f6c63e9f)
+![Screenshot from 2024-11-13 19-09-40](https://github.com/user-attachments/assets/114b235e-3e8a-436c-8e66-02a095fc7c6d)
+![Screenshot from 2024-11-13 19-10-01](https://github.com/user-attachments/assets/0b33dc8f-6a38-4a56-88cd-062feddf7ad8)
+![Screenshot from 2024-11-13 19-10-20](https://github.com/user-attachments/assets/d8512bf8-f9ec-4c46-8544-c12df55613c6)
+![Screenshot from 2024-11-13 19-18-51](https://github.com/user-attachments/assets/92a7d960-55c8-4f75-ba27-a22f3192d4bd)
+
+
+</details>
 </details>
