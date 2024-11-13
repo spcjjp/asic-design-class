@@ -498,6 +498,45 @@ Noting down current design values generated before modifying parameters to impro
 
 ![image](https://github.com/user-attachments/assets/010680a6-9978-4753-8389-c2f55641c892)
 
+Commands to view and change parameters to improve timing and run synthesis
+```c
+# Now once again we have to prep design so as to update variables
+prep -design picorv32a -tag 24-03_10-03 -overwrite
+
+# Addiitional commands to include newly added lef to openlane flow merged.lef
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+
+# Command to display current value of variable SYNTH_STRATEGY
+echo $::env(SYNTH_STRATEGY)
+
+# Command to set new value for SYNTH_STRATEGY
+set ::env(SYNTH_STRATEGY) "DELAY 3"
+
+# Command to display current value of variable SYNTH_BUFFERING to check whether it's enabled
+echo $::env(SYNTH_BUFFERING)
+
+# Command to display current value of variable SYNTH_SIZING
+echo $::env(SYNTH_SIZING)
+
+# Command to set new value for SYNTH_SIZING
+set ::env(SYNTH_SIZING) 1
+
+# Command to display current value of variable SYNTH_DRIVING_CELL to check whether it's the proper cell or not
+echo $::env(SYNTH_DRIVING_CELL)
+
+# Now that the design is prepped and ready, we can run synthesis using following command
+run_synthesis
+```
+Snaapshot of performed commands:
+![Screenshot from 2024-11-13 14-03-30](https://github.com/user-attachments/assets/029d33b1-2518-41b0-92c0-4a39fb0e0503)
+
+![Screenshot from 2024-11-13 14-05-18](https://github.com/user-attachments/assets/32ba72ab-b904-48b8-94d1-2dcb9035cf2b)
+
+![Screenshot from 2024-11-13 14-16-16](https://github.com/user-attachments/assets/2cf0cffb-5d83-49f2-a997-6a3187e5bbbf)
+
+
+
 
 
 
