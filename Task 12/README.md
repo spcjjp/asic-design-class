@@ -496,6 +496,7 @@ Noting down current design values generated before modifying parameters to impro
 
 ![Screenshot from 2024-11-13 12-59-11](https://github.com/user-attachments/assets/835f3bd3-bf8c-46a2-a207-1afd97e0938a)
 
+![image](https://github.com/user-attachments/assets/010680a6-9978-4753-8389-c2f55641c892)
 
 
 
