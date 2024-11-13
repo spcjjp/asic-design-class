@@ -447,6 +447,56 @@ Snapshot of the command run
 
 ![Screenshot from 2024-11-13 05-01-24](https://github.com/user-attachments/assets/6b7c1070-40ba-4494-b0cd-ba31f34fb582)
 
+### 5. Edit 'config.tcl' to change lib file and add the new extra lef into the openlane flow.
+
+Commands to be added to config.tcl to include our custom cell in the openlane flow
+```c
+set ::env(LIB_SYNTH) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__typical.lib"
+set ::env(LIB_FASTEST) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__fast.lib"
+set ::env(LIB_SLOWEST) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__slow.lib"
+set ::env(LIB_TYPICAL) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__typical.lib"
+
+set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef]
+```
+
+Edited config.tcl to include the added lef and change library to ones we added in src directory
+
+![Screenshot from 2024-11-13 12-46-08](https://github.com/user-attachments/assets/497f002d-b2e3-4679-9367-ed8e10567009)
+
+### 6. Run openlane flow synthesis with newly inserted custom inverter cell.
+
+Commands to invoke the OpenLANE flow include new lef and perform synthesis
+```c
+cd Desktop/work/tools/openlane_working_dir/openlane
+docker
+./flow.tcl -interactive
+package require openlane 0.9
+
+# Now the OpenLANE flow is ready to run any design and initially we have to prep the design creating some necessary files and directories for running a specific design which in our case is 'picorv32a'
+prep -design picorv32a
+
+# Adiitional commands to include newly added lef to openlane flow
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+
+# Now that the design is prepped and ready, we can run synthesis using following command
+run_synthesis
+```
+
+Screenshots of commands run
+
+![Screenshot from 2024-11-13 12-55-08](https://github.com/user-attachments/assets/580ce004-e135-45f4-b097-d2c66d92c862)
+
+![Screenshot from 2024-11-13 12-57-58](https://github.com/user-attachments/assets/76f699b0-2759-4d9f-b089-e778d14e1f49)
+
+
+### 7. Remove/reduce the newly introduced violations with the introduction of custom inverter cell by modifying design parameters.
+
+Noting down current design values generated before modifying parameters to improve timing
+
+![Screenshot from 2024-11-13 12-59-11](https://github.com/user-attachments/assets/835f3bd3-bf8c-46a2-a207-1afd97e0938a)
+
+
 
 
 
