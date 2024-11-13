@@ -537,6 +537,18 @@ Snaapshot of performed commands:
 
 ![image](https://github.com/user-attachments/assets/6cc8aa2d-d086-43b2-af8d-e7bb20730907)
 
+### 9. Once synthesis has accepted our custom inverter we can now run floorplan and placement and verify the cell is accepted in PnR flow.
+
+Now that our custom inverter is properly accepted in synthesis we can now run floorplan using following command
+```
+# Now we can run floorplan
+run_floorplan
+```
+
+Screenshots of command run
+![Screenshot from 2024-11-13 14-27-28](https://github.com/user-attachments/assets/7cbf0181-c2be-464e-a1de-31178f55cd55)
+
+
 
 
 
