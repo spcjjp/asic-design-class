@@ -739,6 +739,134 @@ report_checks -fields {net cap slew input_pins} -digits 4
 Result Slck Reduced:
 ![Screenshot from 2024-11-13 17-02-29](https://github.com/user-attachments/assets/93cf2e3a-485a-4aae-b223-c076017ddfa1)
 
+OR gate of drive strength 2 driving OA gate has more delay
+
+![Screenshot from 2024-11-13 18-04-37](https://github.com/user-attachments/assets/e6e6bec7-cbc5-408b-a55d-7a7af4ad8c8d)
+
+Commands to perform analysis and optimize timing by replacing with OR gate of drive strength 4
+```
+# Reports all the connections to a net
+report_net -connections _11643_
+
+# Replacing cell
+replace_cell _14481_ sky130_fd_sc_hd__or4_4
+
+# Generating custom timing report
+report_checks -fields {net cap slew input_pins} -digits 4
+```
+Result Slack Reduced:
+
+![Screenshot from 2024-11-13 18-06-09](https://github.com/user-attachments/assets/cca78604-6b30-4c1f-aeae-d296dcef7f7d)
+
+OR gate of drive strength 2 driving OA gate has more delay
+![Screenshot from 2024-11-13 18-07-27](https://github.com/user-attachments/assets/d6edef6e-f2c6-4f76-a57f-41829a95a643)
+
+Commands to perform analysis and optimize timing by replacing with OR gate of drive strength 4
+```c
+# Reports all the connections to a net
+report_net -connections _11668_
+
+# Replacing cell
+replace_cell _14506_ sky130_fd_sc_hd__or4_4
+
+# Generating custom timing report
+report_checks -fields {net cap slew input_pins} -digits 4
+```
+Result Slcak Reduced:
+![Screenshot from 2024-11-13 18-09-12](https://github.com/user-attachments/assets/4a0b69a5-797e-4664-bc06-0a3e5c8ebe86)
+
+Commands to verify instance _14506_ is replaced with sky130_fd_sc_hd__or4_4
+
+```
+# Generating custom timing report
+report_checks -from _29043_ -to _30440_ -through _14506_
+```
+Screenshot of replaced instance
+![Screenshot from 2024-11-13 18-11-00](https://github.com/user-attachments/assets/f9635e53-3b63-476e-a923-59e3b230c7e9)
+
+We started ECO fixes at wns -23.9000 and now we stand at wns -22.6173 we reduced around 1.2827 ns of violation
+
+## 11. Replace the old netlist with the new netlist generated after timing ECO fix and implement the floorplan, placement and cts.
+
+Now to insert this updated netlist to PnR flow and we can use write_verilog and overwrite the synthesis netlist but before that we are going to make a copy of the old old netlist
+
+Commands to make copy of netlist
+```c
+# Change from home directory to synthesis results directory
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/25-03_18-52/results/synthesis/
+
+# List contents of the directory
+ls
+
+# Copy and rename the netlist
+cp picorv32a.synthesis.v picorv32a.synthesis_old.v
+
+# List contents of the directory
+ls
+```
+Screenshot of the command run
+![Screenshot from 2024-11-13 18-14-00](https://github.com/user-attachments/assets/c7a5eb40-50e0-47f4-8648-277b03e0d6bf)
+
+Commands to write verilog
+```
+# Check syntax
+help write_verilog
+
+# Overwriting current synthesis netlist
+write_verilog /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/25-03_18-52/results/synthesis/picorv32a.synthesis.v
+
+# Exit from OpenSTA since timing analysis is done
+exit
+```
+Screenshot of commands run
+![Screenshot from 2024-11-13 18-20-04](https://github.com/user-attachments/assets/e57f4749-b935-4fbb-b2c5-b14828288649)
+
+Verified that the netlist is overwritten by checking that instance _14506_ is replaced with sky130_fd_sc_hd__or4_4
+![Screenshot from 2024-11-13 18-21-46](https://github.com/user-attachments/assets/f5afc76c-1f49-4687-8fb7-40cf536c4b8e)
+
+Since we confirmed that netlist is replaced and will be loaded in PnR but since we want to follow up on the earlier 0 violation design we are continuing with the clean design to further stages
+
+Commands load the design and run necessary stages
+```
+# Now once again we have to prep design so as to update variables
+prep -design picorv32a -tag 24-03_10-03 -overwrite
+
+# Addiitional commands to include newly added lef to openlane flow merged.lef
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+
+# Command to set new value for SYNTH_STRATEGY
+set ::env(SYNTH_STRATEGY) "DELAY 3"
+
+# Command to set new value for SYNTH_SIZING
+set ::env(SYNTH_SIZING) 1
+
+# Now that the design is prepped and ready, we can run synthesis using following command
+run_synthesis
+
+# Follwing commands are alltogather sourced in "run_floorplan" command
+init_floorplan
+place_io
+tap_decap_or
+
+# Now we are ready to run placement
+run_placement
+
+# Incase getting error
+unset ::env(LIB_CTS)
+
+# With placement done we are now ready to run CTS
+run_cts
+```
+Snapshot of the command run:
+
+![Screenshot from 2024-11-13 18-29-06](https://github.com/user-attachments/assets/ab9618d8-a85f-4970-b4d4-c9d64ece8f15)
+![Screenshot from 2024-11-13 18-29-14](https://github.com/user-attachments/assets/fe6ade63-1b2a-4f53-b3ab-94a3099ebaa0)
+
+![Screenshot from 2024-11-13 18-30-28](https://github.com/user-attachments/assets/c84e2c7f-1068-4f67-860f-92465d9fadbc)
+![Screenshot from 2024-11-13 18-30-57](https://github.com/user-attachments/assets/8779f1b5-de24-413d-b166-1e9b248a1bff)
+![Screenshot from 2024-11-13 18-31-02](https://github.com/user-attachments/assets/b8def725-fbf2-472e-a972-577df4093c0e)
+
 
 
 </details>
