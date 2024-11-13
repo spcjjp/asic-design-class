@@ -189,12 +189,14 @@ magic -T sky130A.tech sky130_inv.mag &
 ```
 Screenshot of the command run:
 
-![Screenshot from 2024-11-12 22-57-47](https://github.com/user-attachments/assets/e11f613b-761d-4193-bc15-99644c6abbea)
+![image](https://github.com/user-attachments/assets/c73e89ef-cffd-4ece-8c1d-dedb6a8e9183)
+
 
 ### 2. Load the custom inverter layout in magic and explore.
 Screenshot of custom inverter layout in magic
 
-![Screenshot from 2024-11-12 22-59-53](https://github.com/user-attachments/assets/6e46f5ed-d585-40d6-bfe5-2b589c0f36d3)
+![image](https://github.com/user-attachments/assets/78a6e65b-864c-4d8a-be75-f9a77190b888)
+
 
 NMOS and PMOS identified
 
