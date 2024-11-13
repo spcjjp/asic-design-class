@@ -1067,7 +1067,87 @@ Screenshots of power distribution network run
 ![Screenshot from 2024-11-13 19-10-01](https://github.com/user-attachments/assets/0b33dc8f-6a38-4a56-88cd-062feddf7ad8)
 ![Screenshot from 2024-11-13 19-10-20](https://github.com/user-attachments/assets/d8512bf8-f9ec-4c46-8544-c12df55613c6)
 ![Screenshot from 2024-11-13 19-18-51](https://github.com/user-attachments/assets/92a7d960-55c8-4f75-ba27-a22f3192d4bd)
+![Screenshot from 2024-11-13 19-35-39](https://github.com/user-attachments/assets/fbcc9019-d8ef-45a6-a8c1-8c453868f52f)
+![Screenshot from 2024-11-13 19-41-30](https://github.com/user-attachments/assets/3b0992d8-6b43-4339-bdf0-45dd94a5d980)
 
+## 2. Perfrom detailed routing using TritonRoute and explore the routed layout.
+Command to perform routing
+```
+# Check value of 'CURRENT_DEF'
+echo $::env(CURRENT_DEF)
+
+# Check value of 'ROUTING_STRATEGY'
+echo $::env(ROUTING_STRATEGY)
+
+# Command for detailed route using TritonRoute
+run_routing
+```
+Screenshots of routing run
+![Screenshot from 2024-11-13 20-01-23](https://github.com/user-attachments/assets/15d601f5-d98e-4ebe-855f-4fc88a8bdc26)
+![Screenshot from 2024-11-13 20-06-38](https://github.com/user-attachments/assets/fac7ed65-82ea-4046-9b42-fb5eb5210c36)
+![Screenshot from 2024-11-13 20-06-47](https://github.com/user-attachments/assets/d0e5087a-271c-446a-a5c4-e60b829cbd9a)
+![Screenshot from 2024-11-13 20-16-10](https://github.com/user-attachments/assets/2fe29bd5-6f60-490b-a11c-b566768adf2e)
+![Screenshot from 2024-11-13 20-16-28](https://github.com/user-attachments/assets/477eaf4b-b07d-46b7-bf40-469544ea85f3)
+
+
+![Screenshot from 2024-11-13 20-17-06](https://github.com/user-attachments/assets/e920ca32-4fee-48ac-9822-bed6611866a0)
+
+Screenshot of fast route guide present in openlane/designs/picorv32a/runs/26-03_08-45/tmp/routing directory
+
+![Screenshot from 2024-11-13 20-51-51](https://github.com/user-attachments/assets/702fae14-1143-43f1-8db4-aef6a5babed4)
+
+## 3. Post-Route parasitic extraction using SPEF extractor.
+Commands for SPEF extraction using external tool
+```c
+# Change directory
+cd Desktop/work/tools/SPEF_EXTRACTOR
+
+# Command extract spef
+python3 main.py /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/26-03_08-45/tmp/merged.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/26-03_08-45/results/routing/picorv32a.def
+```
+
+## 4. Post-Route OpenSTA timing analysis with the extracted parasitics of the route.
+Commands to be run in OpenLANE flow to do OpenROAD timing analysis with integrated OpenSTA in OpenROAD
+```
+# Command to run OpenROAD tool
+openroad
+
+# Reading lef file
+read_lef /openLANE_flow/designs/picorv32a/runs/26-03_08-45/tmp/merged.lef
+
+# Reading def file
+read_def /openLANE_flow/designs/picorv32a/runs/26-03_08-45/results/routing/picorv32a.def
+
+# Creating an OpenROAD database to work with
+write_db pico_route.db
+
+# Loading the created database in OpenROAD
+read_db pico_route.db
+
+# Read netlist post CTS
+read_verilog /openLANE_flow/designs/picorv32a/runs/26-03_08-45/results/synthesis/picorv32a.synthesis_preroute.v
+
+# Read library for design
+read_liberty $::env(LIB_SYNTH_COMPLETE)
+
+# Link design and library
+link_design picorv32a
+
+# Read in the custom sdc we created
+read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
+
+# Setting all cloks as propagated clocks
+set_propagated_clock [all_clocks]
+
+# Read SPEF
+read_spef /openLANE_flow/designs/picorv32a/runs/26-03_08-45/results/routing/picorv32a.spef
+
+# Generating custom timing report
+report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
+
+# Exit to OpenLANE flow
+exit
+```
 
 </details>
 </details>
