@@ -398,6 +398,9 @@ Condition 1 verified
 
 Condition 2 Verified
 
+![image](https://github.com/user-attachments/assets/b0086db0-2806-4a06-8204-42aec555c7c6)
+
+
 Condition 3 Cerified
 
 ### 2. Save the finalized layout with custom name and open it.
