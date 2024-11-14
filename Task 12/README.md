@@ -1120,7 +1120,7 @@ Screenshots of routing run
 
 ![Screenshot from 2024-11-13 20-17-06](https://github.com/user-attachments/assets/e920ca32-4fee-48ac-9822-bed6611866a0)
 
-Screenshot of fast route guide present in openlane/designs/picorv32a/runs/24-03_10-03/tmp/routing directory
+Screenshot of fast route guide present in openlane/designs/picorv32a/runs/13-11_14-21/tmp/routing directory
 
 ![Screenshot from 2024-11-13 20-51-51](https://github.com/user-attachments/assets/702fae14-1143-43f1-8db4-aef6a5babed4)
 
@@ -1131,7 +1131,7 @@ Commands for SPEF extraction using external tool
 cd Desktop/work/tools/SPEF_EXTRACTOR
 
 # Command extract spef
-python3 main.py /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/24-03_10-03/tmp/merged.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/24-03_10-03/results/routing/picorv32a.def
+python3 main.py /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-11_14-21/tmp/merged.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-11_14-21/results/routing/picorv32a.def
 ```
 
 ## 4. Post-Route OpenSTA timing analysis with the extracted parasitics of the route.
@@ -1141,10 +1141,10 @@ Commands to be run in OpenLANE flow to do OpenROAD timing analysis with integrat
 openroad
 
 # Reading lef file
-read_lef /openLANE_flow/designs/picorv32a/runs/24-03_10-03/tmp/merged.lef
+read_lef /openLANE_flow/designs/picorv32a/runs/13-11_14-21/tmp/merged.lef
 
 # Reading def file
-read_def /openLANE_flow/designs/picorv32a/runs/24-03_10-03/results/routing/picorv32a.def
+read_def /openLANE_flow/designs/picorv32a/runs/13-11_14-21/results/routing/picorv32a.def
 
 # Creating an OpenROAD database to work with
 write_db pico_route.db
@@ -1153,7 +1153,7 @@ write_db pico_route.db
 read_db pico_route.db
 
 # Read netlist post CTS
-read_verilog /openLANE_flow/designs/picorv32a/runs/24-03_10-03/results/synthesis/picorv32a.synthesis_preroute.v
+read_verilog /openLANE_flow/designs/picorv32a/runs/13-11_14-21/results/synthesis/picorv32a.synthesis_preroute.v
 
 # Read library for design
 read_liberty $::env(LIB_SYNTH_COMPLETE)
@@ -1168,7 +1168,7 @@ read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
 set_propagated_clock [all_clocks]
 
 # Read SPEF
-read_spef /openLANE_flow/designs/picorv32a/runs/24-03_10-03/results/routing/picorv32a.spef
+read_spef /openLANE_flow/designs/picorv32a/runs/13-11_14-21/results/routing/picorv32a.spef
 
 # Generating custom timing report
 report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
