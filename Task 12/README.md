@@ -364,7 +364,28 @@ New commands inserted in sky130A.tech file to update drc
 
 Screenshot of magic window with rule implemented
 
-![Screenshot 2024-11-13 025622](https://github.com/user-attachments/assets/4fda1a24-b2c1-42ea-b4ae-7cf7b42db5e2)
+![image](https://github.com/user-attachments/assets/f2b714c9-eb89-4b75-853f-4afc0a9e710f)
+
+New commands inserted in sky130A.tech file to update drc
+
+![Screenshot 2024-11-14 120250](https://github.com/user-attachments/assets/04894e71-5626-4840-8c54-a214a12c744c)
+![image](https://github.com/user-attachments/assets/df11b014-fca2-44cb-8150-cf03d7e5a12a)
+
+
+Commands to run in tkcon window
+```
+# Loading updated tech file
+tech load sky130A.tech
+
+# Change drc style to drc full
+drc style drc(full)
+
+# Must re-run drc check to see updated drc errors
+drc check
+
+# Selecting region displaying the new errors and getting the error messages 
+drc why
+```
 
 </details>
 
