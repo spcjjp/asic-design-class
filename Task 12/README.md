@@ -592,7 +592,9 @@ Screenshot of placement def in magic:
 
 Screenshot of custom inverter inserted in placement def with proper abutment:
 
-![Screenshot from 2024-11-13 15-44-56](https://github.com/user-attachments/assets/3269460f-bb00-4676-ad7d-85046522fdca)
+![Screenshot 2024-11-14 053218](https://github.com/user-attachments/assets/4d64adee-992b-494b-986b-20de246a08b3)
+![Screenshot 2024-11-14 053254](https://github.com/user-attachments/assets/60dbbd9f-a1be-4dbb-95da-0c7e4cf1d39a)
+
 
 Command for tkcon window to view internal layers of cells
 ```
