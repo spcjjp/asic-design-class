@@ -184,7 +184,7 @@ git clone https://github.com/nickson-jose/vsdstdcelldesign
 cd vsdstdcelldesign
 cp /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech .
 ls
-magic -T sky130A.tech sky130_inv.mag &
+magic -T sky130A.tech sky130_i,satyanv.mag &
 
 ```
 Screenshot of the command run:
@@ -406,7 +406,7 @@ Condition 3: Height of the standard cell should be even multiples of the vertica
 Commands to open the custom inverter layout
 ```c
 cd Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
-magic -T sky130A.tech sky130_inv.mag &
+magic -T sky130A.tech sky130_satyainv.mag &
   ```
 ![Screenshot from 2024-11-13 03-57-22](https://github.com/user-attachments/assets/658b900e-1199-4f70-b048-647e25e7300c)
 
@@ -618,6 +618,7 @@ Screenshot of custom inverter inserted in placement def with proper abutment:
 
 ![Screenshot 2024-11-14 053218](https://github.com/user-attachments/assets/4d64adee-992b-494b-986b-20de246a08b3)
 ![Screenshot 2024-11-14 053254](https://github.com/user-attachments/assets/60dbbd9f-a1be-4dbb-95da-0c7e4cf1d39a)
+![image](https://github.com/user-attachments/assets/89cbea51-1c37-444d-abc0-1cf539a2d5e8)
 
 
 Command for tkcon window to view internal layers of cells
