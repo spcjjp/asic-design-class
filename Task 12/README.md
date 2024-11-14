@@ -386,6 +386,9 @@ drc check
 # Selecting region displaying the new errors and getting the error messages 
 drc why
 ```
+![Screenshot 2024-11-14 121804](https://github.com/user-attachments/assets/1b8e8590-9f49-41f1-9513-246085c1c49b)
+
+
 
 </details>
 
