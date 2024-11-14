@@ -1176,6 +1176,9 @@ report_checks -path_delay min_max -fields {slew trans net cap input_pins} -forma
 # Exit to OpenLANE flow
 exit
 ```
+![Screenshot 2024-11-14 232324](https://github.com/user-attachments/assets/af7765f1-b5da-4759-a5c8-c04429556ede)
+
+![Screenshot 2024-11-14 232450](https://github.com/user-attachments/assets/803ff0f2-2d4d-4883-b290-6e9b69d03c61)
 
 </details>
 </details>
