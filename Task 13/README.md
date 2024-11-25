@@ -1,3 +1,25 @@
+# OpenRoad Physical Design:
+
+## Cloning and Installing Dependencies
+
+To set up the environment, use the setup.sh script to install all necessary dependencies, including those required for OpenROAD.
+```c
+git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts
+cd OpenROAD-flow-scripts
+sudo ./setup.sh
+```
+Verifying the Installation:
+
+After setting up the environment, the binaries will be available in your system's path.
+```c
+source ./env.sh
+yosys -help
+openroad -help
+cd flow
+make
+```
+### To view the final layout in the OpenROAD GUI, use the following command:
+
 ```
 make gui_final
 ```
@@ -10,6 +32,31 @@ make gui_final
 ### ORFS Directory Structure and File formats
 
 ![Screenshot from 2024-11-25 18-26-50](https://github.com/user-attachments/assets/ecf21ef9-99ee-4ca4-a591-25270d71ca88)
+
+### Automated RTL-to-GDS Flow for VSDBabySoC
+
+Follow these steps to set up the VSDBabySoC design in the OpenROAD-flow-scripts environment:
+
+1. **Create the Directory**:  
+   Navigate to `OpenROAD-flow-scripts/flow/designs/sky130hd` and create a new folder named `vsdbabysoc`.
+
+2. **Copy Required Files**:  
+   Transfer the following folders and their respective contents from the VSDBabySoC directory on the system to the newly created `vsdbabysoc` directory:  
+   - **gds**: Includes `avsddac.gds` and `avsdpll.gds`.  
+   - **include**: Contains `sandpiper.vh`, `sandpiper_gen.vh`, `sp_default.vh`, and `sp_verilog.vh`.  
+   - **lef**: Includes `avsddac.lef` and `avsdpll.lef`.  
+   - **lib**: Contains `avsddac.lib` and `avsdpll.lib`.
+
+3. **Add Constraints File**:  
+   Copy `vsdbabysoc_synthesis.sdc` to the `vsdbabysoc` directory.
+
+4. **Include Additional Configuration Files**:  
+   Transfer `macro.cfg` and `pin_order.cfg` from the VSDBabySoC folder to the same directory.
+
+5. **Prepare Macro Configuration**:  
+   Create a `macro.cfg` file in the `vsdbabysoc` directory with the required configuration details.
+
+By following these steps, we can set up the VSDBabySoC design for RTL-to-GDS implementation. 
 
 ![image](https://github.com/user-attachments/assets/27aa576b-9802-4584-88fe-6a6bca888011)
 
