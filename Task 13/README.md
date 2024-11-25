@@ -22,3 +22,7 @@ make gui_final
 ![image](https://github.com/user-attachments/assets/9c218340-64ee-4064-bbe2-6dab082f8753)
 
 ![image](https://github.com/user-attachments/assets/0acb2587-0b0d-4d47-8b57-8a3103ce12f7)
+
+![image](https://github.com/user-attachments/assets/99982f9f-fd2f-47dd-972a-190fa9379187)
+
+![image](https://github.com/user-attachments/assets/45c3e803-d34b-4217-96ec-c790d7a22378)
