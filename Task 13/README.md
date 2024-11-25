@@ -15,6 +15,21 @@ make gui_final
 
 ![image](https://github.com/user-attachments/assets/bedc34cc-0a56-4ea6-8c45-b830d8951133)
 
+### Synthesis Netlists:
+
+![image](https://github.com/user-attachments/assets/188af5d8-c3a2-48e3-b41b-3109b89021be)
+
+### Synthesis log:
+
+![image](https://github.com/user-attachments/assets/cb14a5c9-5b84-4059-a209-f74dd2431b8c)
+
+### Synthesis Check:
+
+![image](https://github.com/user-attachments/assets/9246bdf5-5714-4ecc-993c-250924054efc)
+
+
+
+
 ### Floorplan
 
 ![image](https://github.com/user-attachments/assets/7fdeba4b-8517-4771-b91a-a983e2ffb86a)
@@ -26,3 +41,6 @@ make gui_final
 ![image](https://github.com/user-attachments/assets/99982f9f-fd2f-47dd-972a-190fa9379187)
 
 ![image](https://github.com/user-attachments/assets/45c3e803-d34b-4217-96ec-c790d7a22378)
+
+
+![image](https://github.com/user-attachments/assets/081acf39-cf99-4203-ae24-5859037d2671)
