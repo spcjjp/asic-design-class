@@ -100,8 +100,85 @@ By following these steps, we can set up the VSDBabySoC design for RTL-to-GDS imp
 
 ![image](https://github.com/user-attachments/assets/45c3e803-d34b-4217-96ec-c790d7a22378)
 
+```
+make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk place
+```
+![Screenshot from 2024-11-25 22-45-58](https://github.com/user-attachments/assets/9af333c4-64ae-44f2-939b-73383884f3e5)
+
+![image](https://github.com/user-attachments/assets/f9bd3fa1-0ed1-44e0-bf03-9dd3945fc780)
+
+```
+make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk cts
+```
+
+![image](https://github.com/user-attachments/assets/4931ae1b-d426-40c2-8b0e-4cf85e591068)
+
+```
+make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk route
+```
+
+![image](https://github.com/user-attachments/assets/3c960e9f-b4c5-4f0d-833a-3c474b498452)
+
+![image](https://github.com/user-attachments/assets/6629e33b-8c30-463f-99d1-da6f616b8800)
+
+![image](https://github.com/user-attachments/assets/1bc8fe3f-efa5-4a99-a1d3-de6da4afbe7a)
 
 
+
+We also have the floorplan, place and the pdn files as shown below
+
+![image](https://github.com/user-attachments/assets/47191b17-b4f4-4a46-9013-95fab90f79a0)
+
+![image](https://github.com/user-attachments/assets/bc1a7e59-c423-4d51-bf7a-fe6c68387c53)
+
+### The detailed routing file is as follows:-
+![image](https://github.com/user-attachments/assets/fd4b325e-1778-41af-8b67-e21ce3df8644)
+
+### Merge File:
+
+![image](https://github.com/user-attachments/assets/2e30f426-0795-4bdb-84fc-abf0316143a0)
+
+### The final report.log file is as follows:-
+
+![image](https://github.com/user-attachments/assets/d150be88-b19f-4f99-827d-36cb8ee94d98)
+
+### The synthesis statistics is as follows:
+
+![image](https://github.com/user-attachments/assets/8893e179-bb1d-4794-889f-eaab3cbe06a3)
+
+## Openroad GUI
+
+### Command Executed:
+
+![image](https://github.com/user-attachments/assets/aec91ef1-9cf2-446d-9816-f41fed707a4d)
+
+
+```
+make gui_floorplan
+```
+
+![image](https://github.com/user-attachments/assets/7a9cecf5-7179-4d84-ac37-7078e1ad3679)
+
+```
+make gui_place
+```
+![image](https://github.com/user-attachments/assets/770f95b4-9fa0-4959-bbf3-a8938cdbceb4)
+
+For clock tree synthesis we use the following command
+```
+make gui_cts
+```
+![image](https://github.com/user-attachments/assets/86284cf3-0dfa-4156-83d5-b78643000402)
+
+For routing the commands are
+```
+make gui_route
+```
+![image](https://github.com/user-attachments/assets/46dbb7a5-c177-44f0-9614-c0fb414423fa)
+
+```
+make gui_final
+```
 
 
 
