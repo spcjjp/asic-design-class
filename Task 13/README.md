@@ -169,6 +169,8 @@ For clock tree synthesis we use the following command
 make gui_cts
 ```
 ![image](https://github.com/user-attachments/assets/86284cf3-0dfa-4156-83d5-b78643000402)
+![image](https://github.com/user-attachments/assets/2727914c-c3a7-4a53-8d52-b77557ff2cc3)
+
 
 For routing the commands are
 ```
@@ -182,6 +184,15 @@ make gui_final
 ![image](https://github.com/user-attachments/assets/4e10142b-fa56-4614-a3a8-db8d276ce967)
 ![image](https://github.com/user-attachments/assets/80db8f2f-d91c-48be-bc9a-0f69bba373b3)
 ![image](https://github.com/user-attachments/assets/0b552685-767f-4446-b3ba-2975bef151ed)
+
+To give the GDS file in the klayout type the following commands
+
+```
+ klayout -e -nn ./platforms/nangate45/FreePDK45.lyt -l ./platforms/nangate45/FreePDK45.lyp ./results/nangate45/gcd/base/6_final.gds
+```
+
+![image](https://github.com/user-attachments/assets/92c64bf6-ea91-4233-a2f1-a4d430a6ee51)
+
 
 
 
