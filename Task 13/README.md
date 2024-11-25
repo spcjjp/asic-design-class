@@ -33,6 +33,10 @@ make gui_final
 
 ![image](https://github.com/user-attachments/assets/3d79edc9-28a0-4384-9067-902a296be820)
 
+### Synthesis TCL:
+
+![image](https://github.com/user-attachments/assets/99982f9f-fd2f-47dd-972a-190fa9379187)
+
 
 ### Floorplan
 
@@ -42,7 +46,7 @@ make gui_final
 
 ![image](https://github.com/user-attachments/assets/0acb2587-0b0d-4d47-8b57-8a3103ce12f7)
 
-![image](https://github.com/user-attachments/assets/99982f9f-fd2f-47dd-972a-190fa9379187)
+
 
 ![image](https://github.com/user-attachments/assets/45c3e803-d34b-4217-96ec-c790d7a22378)
 
