@@ -179,6 +179,9 @@ make gui_route
 ```
 make gui_final
 ```
+![image](https://github.com/user-attachments/assets/4e10142b-fa56-4614-a3a8-db8d276ce967)
+![image](https://github.com/user-attachments/assets/80db8f2f-d91c-48be-bc9a-0f69bba373b3)
+![image](https://github.com/user-attachments/assets/0b552685-767f-4446-b3ba-2975bef151ed)
 
 
 
