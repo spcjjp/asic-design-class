@@ -27,7 +27,11 @@ make gui_final
 
 ![image](https://github.com/user-attachments/assets/9246bdf5-5714-4ecc-993c-250924054efc)
 
+### Synthesis Stats:
 
+![image](https://github.com/user-attachments/assets/08f47ec3-1687-4815-86d2-7490a8ec746d)
+
+![image](https://github.com/user-attachments/assets/3d79edc9-28a0-4384-9067-902a296be820)
 
 
 ### Floorplan
