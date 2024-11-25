@@ -29,6 +29,23 @@ make gui_final
 ![Screenshot from 2024-11-25 17-50-57](https://github.com/user-attachments/assets/f83f35b4-9abf-4f75-bc08-0105eed5f1cc)
 
 
+![image](https://github.com/user-attachments/assets/ba96d734-8407-4711-8f1f-94fe0e74ab49)
+
+![image](https://github.com/user-attachments/assets/451ef896-e955-4ad6-99bc-805ab690b3f9)
+
+![image](https://github.com/user-attachments/assets/ff8b6223-d292-4eca-a9ea-0127b764719a)
+
+![image](https://github.com/user-attachments/assets/f68440b4-8909-4e26-8da1-ff991caecbb4)
+
+![image](https://github.com/user-attachments/assets/b8d239f1-1dbd-42e1-9ec1-30878b0c6b06)
+
+![image](https://github.com/user-attachments/assets/85e18aaa-f39e-4fe4-b91b-bf6d583a70e6)
+
+![image](https://github.com/user-attachments/assets/85b28b45-db4f-4e93-86b5-2a5c1ac7e293)
+
+
+
+
 ### ORFS Directory Structure and File formats
 
 ![Screenshot from 2024-11-25 18-26-50](https://github.com/user-attachments/assets/ecf21ef9-99ee-4ca4-a591-25270d71ca88)
@@ -192,6 +209,20 @@ To give the GDS file in the klayout type the following commands
 ```
 
 ![image](https://github.com/user-attachments/assets/92c64bf6-ea91-4233-a2f1-a4d430a6ee51)
+
+## Macro Placement RTL MP And QOR
+
+Config Setup For Macro Placement
+
+We are going to do the macro placement for the following file
+
+![image](https://github.com/user-attachments/assets/b7b42501-ec4a-40b8-beec-61d30860c33c)
+
+## Steps To Run And Review Macro Placement
+
+We need to uncomment this line in the make file
+
+![image](https://github.com/user-attachments/assets/e7baee52-902e-4108-8c71-bde96616ab9d)
 
 
 
