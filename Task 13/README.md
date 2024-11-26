@@ -106,29 +106,56 @@ By following these steps, we can set up the VSDBabySoC design for RTL-to-GDS imp
 
 ### Floorplan
 
-![image](https://github.com/user-attachments/assets/7fdeba4b-8517-4771-b91a-a983e2ffb86a)
+![image](https://github.com/user-attachments/assets/db38e81e-7e59-4b41-9df4-32c56b7fdab7)
 
-![image](https://github.com/user-attachments/assets/9c218340-64ee-4064-bbe2-6dab082f8753)
+![image](https://github.com/user-attachments/assets/5ef50fb8-e810-47af-bfa9-5da56a247d60)
 
-![image](https://github.com/user-attachments/assets/0acb2587-0b0d-4d47-8b57-8a3103ce12f7)
+![image](https://github.com/user-attachments/assets/5e3ef63a-df7b-4f2d-8562-2f9213b45220)
+
+![image](https://github.com/user-attachments/assets/d48a2e79-e57a-4af0-afee-5b6815c411be)
+
+![Screenshot from 2024-11-26 04-20-57](https://github.com/user-attachments/assets/4f1c8981-8630-4d37-87ff-de4df521c000)
+
+### Floorplan log:
+![image](https://github.com/user-attachments/assets/bf27aadb-15b6-4ac0-b341-269f807bce03)
+
+### Floorplan Timing Report:
+
+![image](https://github.com/user-attachments/assets/21c97191-5d23-4d3d-bdcd-231fc97ede71)
+
+![image](https://github.com/user-attachments/assets/c70146bf-fffd-4f8a-9414-edc6d4ab1ac1)
 
 
-![image](https://github.com/user-attachments/assets/99982f9f-fd2f-47dd-972a-190fa9379187)
-
-![image](https://github.com/user-attachments/assets/45c3e803-d34b-4217-96ec-c790d7a22378)
 
 ```
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk place
 ```
 ![Screenshot from 2024-11-25 22-45-58](https://github.com/user-attachments/assets/9af333c4-64ae-44f2-939b-73383884f3e5)
 
-![image](https://github.com/user-attachments/assets/f9bd3fa1-0ed1-44e0-bf03-9dd3945fc780)
+![image](https://github.com/user-attachments/assets/c58ead90-0743-4110-9d98-c52f6e59cd60)
+
+```
+make gui_place
+```
+![image](https://github.com/user-attachments/assets/d1155d84-810f-42da-b641-fcaa6f0f6305)
+
+![image](https://github.com/user-attachments/assets/06fbfa1f-96f0-4667-8fd8-8b26fba5af43)
+
+![image](https://github.com/user-attachments/assets/70e5f072-2530-4ccf-82ba-766a5fdeed19)
+
 
 ```
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk cts
 ```
 
 ![image](https://github.com/user-attachments/assets/4931ae1b-d426-40c2-8b0e-4cf85e591068)
+
+```
+make gui_cts
+```
+![image](https://github.com/user-attachments/assets/501fd827-ec2d-47db-a1bf-4d412505d2fb)
+
+![image](https://github.com/user-attachments/assets/0ae9e161-4c5b-4363-a87d-6eab7e223c4d)
 
 ```
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk route
