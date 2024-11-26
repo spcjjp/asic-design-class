@@ -157,6 +157,20 @@ make gui_cts
 
 ![image](https://github.com/user-attachments/assets/0ae9e161-4c5b-4363-a87d-6eab7e223c4d)
 
+### Heatmap:
+
+![image](https://github.com/user-attachments/assets/97a9720a-b521-4a72-bcea-f434d83f936c)
+
+![image](https://github.com/user-attachments/assets/00da3f14-693d-409c-b2d1-ffffc0ef4106)
+
+### Estimated Congestion
+
+![image](https://github.com/user-attachments/assets/ac1f945c-c86f-4f95-b536-9c355e962ca7)
+
+### IR Drop:
+
+![image](https://github.com/user-attachments/assets/83e0537f-61f1-4512-8dd1-0e7221ad4bbd)
+
 ```
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk route
 ```
