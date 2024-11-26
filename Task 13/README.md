@@ -8,6 +8,8 @@ git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD-flow-scri
 cd OpenROAD-flow-scripts
 sudo ./setup.sh
 ```
+![image](https://github.com/user-attachments/assets/5a1397ec-0663-4135-a921-64cc8f385177)
+
 Verifying the Installation:
 
 After setting up the environment, the binaries will be available in your system's path.
@@ -161,11 +163,13 @@ make gui_cts
 
 ![image](https://github.com/user-attachments/assets/97a9720a-b521-4a72-bcea-f434d83f936c)
 
-![image](https://github.com/user-attachments/assets/00da3f14-693d-409c-b2d1-ffffc0ef4106)
+![image](https://github.com/user-attachments/assets/7dbdeaf6-68bd-4dba-8b8e-bff5cfb91e9c)
 
 ### Estimated Congestion
 
-![image](https://github.com/user-attachments/assets/ac1f945c-c86f-4f95-b536-9c355e962ca7)
+![image](https://github.com/user-attachments/assets/6daedb4a-45e8-4273-ae1c-4ac4eed7ca35)
+
+![image](https://github.com/user-attachments/assets/30504e19-0569-41f6-a14c-77fed2b9f913)
 
 ### IR Drop:
 
@@ -203,3 +207,15 @@ We also have the floorplan, place and the pdn files as shown below
 ### The synthesis statistics is as follows:
 
 ![image](https://github.com/user-attachments/assets/8893e179-bb1d-4794-889f-eaab3cbe06a3)
+
+![Screenshot from 2024-11-26 00-19-43](https://github.com/user-attachments/assets/92c14725-15a4-4ee4-9038-ff99f4b7b09e)
+![Screenshot from 2024-11-26 00-21-06](https://github.com/user-attachments/assets/232f4879-90e2-479c-8730-60d94a0b3824)
+![Screenshot from 2024-11-26 00-22-10](https://github.com/user-attachments/assets/e21074bb-7cce-40f5-8afa-eca630e5c153)
+![Screenshot from 2024-11-26 00-24-30](https://github.com/user-attachments/assets/2f9597ca-122e-4875-a33d-e019cc68fa7e)
+![Screenshot from 2024-11-26 00-26-45](https://github.com/user-attachments/assets/6ac98bfc-9ab1-4998-9286-1acb8beeb379)
+
+
+### QOR report
+
+![image](https://github.com/user-attachments/assets/fba0b63a-4b6f-41da-ba46-e51a72608976)
+
